@@ -1,0 +1,136 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+\usepackage[pdftex]{hyperref}
+\usepackage[english]{babel}
+\usepackage[none]{hyphenat}
+\hypersetup{%
+  pdftitle={Mathieu CHATAIGNER -- R\'esum\'e},
+}
+
+% moderncv themes
+\moderncvtheme[]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+
+
+% adjust the page margins
+\usepackage[scale=0.90]{geometry}
+\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+\AtBeginDocument{\setlength{\maketitlenamewidth}{12cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Mathieu}
+\familyname{CHATAIGNER}
+\title{Postgraduate student \newline{}\large{Information Systems Architecture\newline{}Grid Computing}}               % optional, remove the line if not wanted
+\address{\Writinghand~1 rue de la garenne}{80480 Salouel -- France}    % optional, remove the line if not wanted
+\mobile{mobile +33 6 84 85 83 22}                    % optional, remove the line if not wanted
+%\phone{phone (optional)}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{mathieu.chataigner@gmail.com}                      % optional, remove the line if not wanted
+%\homepage{homepage (optional)}                % optional, remove the line if not wanted
+\extrainfo{Age 22\\French nationality\\Driving license} % optional, remove the line if not wanted
+%\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyfoot[CO,CE]{Updated -- \today}
+
+
+\begin{document}
+\sloppy
+
+
+\maketitle
+\vspace{-1.5em}
+
+\section{Education}
+
+\cventry{2010 -- 2011}{MSc Computational and Software Techniques in E-engineering}{~\newline{}\href{http://www.cranfield.ac.uk/}{Cranfield University}}{United Kingdom}{}{}  % arguments 3 to 6 can be left empty
+\cventry{2008 -- 2011}{MSc Information Systems Architecture\newline{}(equivalent of a Master's Degree in Information Systems)}{~\newline{}\href{http://asi.insa-rouen.fr/welcome-in-asi/view?set_language=en}{Institut National des Sciences Appliquées de Rouen}}{France}{}{}  % arguments 3 to 6 can be left empty
+
+\section{Experience}
+
+\cventry{Summer 2010}{Internship as a web developer}{\href{http://www.auchan.fr/}{Auchan France}}{Villeneuve d'Ascq, France}{}{\textbf{Objectives :} Eight-week industrial placement consisting in developing an intranet site. It aims at referencing existing collaborative solutions for team work.\newline Use of Microsoft SharePoint\texttrademark, XML, XSL, Javascript.}
+
+\cventry{02/2010 -- 07/2010}{Part-time developer}{\href{http://www.unit.eu/}{Unit foundation}}{Rouen, France}{}{Industrial project certified ISO 9001: 2008 (Quality Management) carried out by 9 students.\newline{}%
+\textbf{Objectives :} 
+Improve and add features to UNIT search engine for free educational contents on Internet (\href{http://www.unit.eu/}{www.unit.eu}). \newline{}
+Use of J2EE, Tomcat, XML, XSL, Javascript, Open Archive Initiative, ORI-OAI.}
+
+\cventry{Summer 2009}{Internship as a developer}{\href{http://uk.c-s.fr/}{Communications \& Systems}}{Toulouse, France}{}{\textbf{Objectives :} Eight-week training period consisting in looking for an Open-Sources solution to draw large graphs of data and implementing it.\newline{}Use of Java, XML, XSL.}
+
+\section{Computer skills}
+
+\cvcomputer{Programming languages}{C/C++, Java, Python, MPI}{Distributed computing}{Knowledge in RMI, Web Services, CORBA}
+\cvcomputer{Web development}{J2EE, XHTML, CSS, Javascript, PHP}{Networks}{Experience in TCP/IP, DNS}
+\cvcomputer{Script languages}{Python, Bash, Perl}{Databases}{MySQL, PostgreSQL}
+\cvcomputer{Operating systems}{Both Linux and Windows}{Other}{Matlab, \LaTeX, Office}
+
+\section{Languages}
+
+\cvlanguage{French}{Native}{}
+\cvlanguage{English}{Fluent}{TOEIC Score : 880/ 990\hfill}
+\cvlanguage{German}{Basic knowledge}{}
+
+\section{Interests}
+
+\cvline{Sports}{\small Inline skates, Fitness, Bike, Swimming}
+%\cvline{Card games}{\small Magic the Gathering}
+
+%\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5 \cite{book1}}
+%\cvlistdoubleitem{Item 3}{}
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+%\nocite{*} 
+%\bibliographystyle{plain}
+%\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
+
+
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
+% LocalWords:  Cranfield Institut des Appliquées de Rouen Auchan Villeneuve XSL
+% LocalWords:  d'Ascq SharePoint Javascript EE ORI OAI MySQL PostgreSQL RMI PHP
+% LocalWords:  CORBA TCP IP DNS TOEIC Inline XHTML CSS MSc
