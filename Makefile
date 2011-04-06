@@ -12,7 +12,6 @@ all: clean_pdf CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 	pdftk $@ update_info report.txt output temp.pdf
 	cp temp.pdf $@
 	@echo "$@ generated"
-	xdg-open $@&
 
 cv:
 	pdflatex CV-Mathieu-Chataigner.tex
