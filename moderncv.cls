@@ -116,12 +116,12 @@
 %\RequirePackage{ae,aecompl,aeguill}
 
 % page geometry
-\addtolength{\oddsidemargin}{-54pt}
-\addtolength{\textwidth}{109pt}
-\addtolength{\topmargin}{-70pt}
-\addtolength{\textheight}{122pt}
-\addtolength{\marginparsep}{-5pt}
-\addtolength{\marginparwidth}{-10pt}
+\addtolength{\oddsidemargin}{-74pt}%-54
+\addtolength{\textwidth}{149pt}%109
+\addtolength{\topmargin}{-80pt}%-70
+\addtolength{\textheight}{147pt}%122
+\addtolength{\marginparsep}{-5pt}%-5
+\addtolength{\marginparwidth}{-10pt}%-10
 
 % hyperrefs
 \RequirePackage{url}
@@ -311,7 +311,7 @@
 
 % usage: \section{<title>}
 \newcommand*{\section}[1]{%
-  \vspace*{2.5ex}%
+  \vspace*{2.0ex}%2.5ex
   \parbox[m]{\hintscolumnwidth}{\raggedleft\hintfont{\color{sectionrectanglecolor}\rule{\hintscolumnwidth}{1ex}}}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{part}{#1}%
@@ -374,7 +374,7 @@
 
 % usage (inside 'language' cvsection environment): \cvlanguage{name}{level}{comment}
 \newcommand*{\cvlanguage}[3]{%
-  \cvline{#1}{\begin{minipage}[t]{.225\maincolumnwidth}\textbf{#2}\end{minipage}\hfill\begin{minipage}[t]{0.725\maincolumnwidth}\footnotesize\itshape #3\end{minipage}}}
+  \cvline{#1}{\begin{minipage}[t]{.5\maincolumnwidth}\textbf{#2}\end{minipage}\hfill\begin{minipage}[t]{0.5\maincolumnwidth}\footnotesize\itshape #3\end{minipage}}}%0.225 0.725
 
 % usage (inside 'computer skills' cvsection environment): \cvcomputer{category}{programs}{category}{programs}
 \newcommand*{\cvcomputer}[4]{%

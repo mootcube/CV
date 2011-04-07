@@ -26,7 +26,7 @@
 
 
 % adjust the page margins
-\usepackage[scale=0.90]{geometry}
+%\usepackage[scale=0.90]{geometry}
 \setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
 \AtBeginDocument{\setlength{\maketitlenamewidth}{12cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 \AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
@@ -41,7 +41,7 @@
 %\fax{fax (optional)}                          % optional, remove the line if not wanted
 \email{mathieu.chataigner@gmail.com}                      % optional, remove the line if not wanted
 %\homepage{homepage (optional)}                % optional, remove the line if not wanted
-\extrainfo{Age 22\\French nationality\\Driving license} % optional, remove the line if not wanted
+\extrainfo{Age 23\\French nationality\\Driving license} % optional, remove the line if not wanted
 %\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
 %\quote{quote (optional)}                 % optional, remove the line if not wanted
 
@@ -60,7 +60,7 @@
 %----------------------------------------------------------------------------------
 
 \pagestyle{fancy}
-\fancyfoot[CO,CE]{Updated -- \today}
+\fancyfoot[CO,CE]{\fontfamily{cmss}\selectfont Updated -- \today}
 
 
 \begin{document}
@@ -68,7 +68,7 @@
 
 
 \maketitle
-\vspace{-1.5em}
+%\vspace{-1.5em}
 
 \section{Education}
 
@@ -101,7 +101,8 @@ Use of J2EE, Tomcat, XML, XSL, Javascript, Open Archive Initiative, ORI-OAI.}
 
 \section{Interests}
 
-\cvline{Sports}{\small Inline skates, Fitness, Bike, Swimming}
+
+\cvline{Sports}{Inline skates, Fitness, Bike, Swimming}
 %\cvline{Card games}{\small Magic the Gathering}
 
 %\renewcommand{\listitemsymbol}{-} % change the symbol for lists

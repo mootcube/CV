@@ -159,11 +159,12 @@
       \begin{minipage}[b]{\maketitlepicturewidth}%
         \raggedleft{}\addressfont\color{addresscolor}%  required to correctly align content
         \framebox{\includegraphics[width=\maketitlepicturewidth]{\@photo}}%
-      \end{minipage}}\\[3em]%
+      \end{minipage}}\\%[3em]%
   % optional quote
   \ifthenelse{\isundefined{\@quote}}%
     {}%
-    {{\centering{}\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+    {{\\[-1.0em]%3em
+\centering{}\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[1.5em]}}%
   }
 
 

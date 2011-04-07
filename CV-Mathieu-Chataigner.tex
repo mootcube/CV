@@ -7,7 +7,8 @@
 
 
 
-\documentclass[11pt,a4paper,pdfcenterwindow,pdffitwindow,pdftoolbar=false,pdfmenubar=false,pdfpagelayout=OneColumn]{moderncv}
+\documentclass[11pt,a4paper]{moderncv}
+%\documentclass[11pt,a4paper,pdfcenterwindow,pdffitwindow,pdftoolbar=false,pdfmenubar=false,pdfpagelayout=OneColumn]{moderncv}
 
 %\topmargin 5cm
 
@@ -30,7 +31,9 @@
 \usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 
 % adjust the page margins
-\usepackage[scale=0.9]{geometry}
+%\usepackage[scale=0.9]{geometry}
+
+
 \setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
 \AtBeginDocument{\setlength{\maketitlenamewidth}{12cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 \AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
@@ -38,16 +41,16 @@
 % personal data
 \firstname{Mathieu}
 \familyname{CHATAIGNER}
-\title{Élève ingénieur INSA BAC+5\newline{}\large{Architecture des Systèmes d'Information\newline{}Grid Computing}}               % optional, remove the line if not wanted
-\address{\Writinghand~1 rue de la garenne}{80480 Salouel -- France}    % optional, remove the line if not wanted
+\title{Élève ingénieur INSA BAC+5\newline{}\large{Architecture des Systèmes d'Information\newline{}\newline{}}}               % optional, remove the line if not wanted
+\address{\Writinghand~CH369, Chilver Hall}{MK43 0AL Cranfield -- UK}    % optional, remove the line if not wanted
 \mobile{portable +33 6 84 85 83 22}                    % optional, remove the line if not wanted
 %\phone{phone (optional)}                      % optional, remove the line if not wanted
 %\fax{fax (optional)}                          % optional, remove the line if not wanted
 \email{mathieu.chataigner@gmail.com}                      % optional, remove the line if not wanted
 %\homepage{homepage (optional)}                % optional, remove the line if not wanted
-\extrainfo{Age 22\\Nationalité française\\Permis B} % optional, remove the line if not wanted
+\extrainfo{skype~: \href{callto://mathieuchataigner}{mathieuchataigner}\\Age 23\\Nationalité française\\Permis B} % optional, remove the line if not wanted
 %\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-%\quote{quote (optional)}                 % optional, remove the line if not wanted
+\quote{\huge Recherche d'emploi -- Ingénieur Junior}
 
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter
@@ -90,23 +93,35 @@ Utilisation de J2EE, Tomcat, XML, XSL, Javascript, Open Archive Initiative, ORI-
 
 \section{Compétences informatiques}
 
-\cvcomputer{Langages de programmation}{C/C++, Java, Python, MPI}{Informatique répartie}{Connaissance en RMI, Web Services, CORBA}
-\cvcomputer{Développement Web}{J2EE, XHTML, CSS, Javascript, PHP}{Réseaux}{Expérience dans le modèle TCP/IP, DNS}
-\cvcomputer{Langages de scripts}{Python, Bash, Perl}{Bases de données}{MySQL, PostgreSQL}
-\cvcomputer{Systèmes d'Exploitation}{Linux et Windows}{Autres}{Matlab, \LaTeX, Office}
+\cvcomputer
+{Connaissances générales}{\textbf{Cloud Computing}, Virtualisation, Calculs Haute Performance}
+{Langages de programmation}{\textbf{Java}, C/C++, Python, MPI}
+\cvcomputer
+{Développement Web}{\textbf{J2EE}, HTML, CSS, Javascript, PHP}
+{Informatique répartie}{\textbf{Web Services}, RMI, Grid Services, CORBA}
+\cvcomputer
+{Bases de données}{MySQL, PostgreSQL}
+{Langages de scripts}{Python, Bash, Perl}
+\cvcomputer
+{Réseaux}{Expérience dans le modèle \textbf{TCP/IP}, DNS}
+{Autres}{\textbf{Linux}, Windows, UML, \textbf{Matlab}, \LaTeX, Office}
 
 \section{Langues}
 
 \cvlanguage{Anglais}{Courant}{TOEIC Score : 880/ 990\hfill}
 \cvlanguage{Allemand}{Niveau universitaire}{}
 
+
 \section{Centres d'intérêts}
 
-\cvline{Sports}{Rollers, Musculation, VTT, Natation}
+\cvline{Sports}{Roller, Musculation, VTT, Natation}
 \cvline{Autre}{Jeux de société}
-\cvline{Autre}{Jeux de société}
-\cvline{Autre}{Jeux de société}
-\cvline{Autre}{Jeux de société}
+
+
+
+
+
+
 %\cvline{Jeu de cartes}{\small Magic the Gathering}
 
 %\renewcommand{\listitemsymbol}{-} % change the symbol for lists
