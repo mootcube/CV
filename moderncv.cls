@@ -71,6 +71,16 @@
 % CJK option
 %\newif\if@CJK\@CJKfalse
 %\DeclareOption{CJK}{\@CJKtrue}
+\newcommand*{\fr}{0}
+\newcommand*{\obj}{\textbf{Objectives: }}
+
+
+\DeclareOption{en}{\renewcommand*{\fr}{0}
+  \renewcommand*{\obj}{\textbf{Objectives: }}
+}
+\DeclareOption{fr}{\renewcommand*{\fr}{1}
+  \renewcommand*{\obj}{\textbf{Objectifs : }}
+}
 
 % execute default options
 \ExecuteOptions{a4paper,11pt,color,final}
@@ -118,8 +128,8 @@
 % page geometry
 \addtolength{\oddsidemargin}{-74pt}%-54
 \addtolength{\textwidth}{149pt}%109
-\addtolength{\topmargin}{-80pt}%-70
-\addtolength{\textheight}{147pt}%122
+\addtolength{\topmargin}{-70pt}%-70
+\addtolength{\textheight}{122pt}%122
 \addtolength{\marginparsep}{-5pt}%-5
 \addtolength{\marginparwidth}{-10pt}%-10
 
@@ -173,7 +183,7 @@
 \setlength\normallineskip{1\p@}
 \renewcommand\baselinestretch{}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
+\setlength{\parskip}{5pt}
 \setlength\columnsep{10\p@}
 \setlength\columnseprule{0\p@}
 
@@ -311,7 +321,7 @@
 
 % usage: \section{<title>}
 \newcommand*{\section}[1]{%
-  \vspace*{2.0ex}%2.5ex
+  \vspace*{2.5ex}%2.5ex
   \parbox[m]{\hintscolumnwidth}{\raggedleft\hintfont{\color{sectionrectanglecolor}\rule{\hintscolumnwidth}{1ex}}}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{part}{#1}%
@@ -358,7 +368,9 @@
   \hfill%
   \ifthenelse{\equal{#3}{}}%
     {}%
-    {#1~\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
+    {#1~\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}%
+    \newline{}\begin{minipage}[t]{\linewidth}\small~\end{minipage}%ajout de moot
+}}%
 
 % usage: \cventry{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
 \newcommand*{\cventry}[6]{%
@@ -405,9 +417,12 @@
 \AtBeginDocument{%
   \if@displaypagenumbers%
     \@ifundefined{r@lastpage}{}{%
-      \ifthenelse{\pageref{lastpage} > 1}{%
+      \ifthenelse{\pageref{lastpage} > 1} {%
         \fancypagestyle{plain}{%
-          \fancyfoot[r]{\addressfont\color{quotecolor}\footnotesize\thepage/\pageref{lastpage}}
+          \fancyfoot[r]{\sffamily\color{quotecolor}\footnotesize\thepage/\pageref{lastpage}}%addressfont
+          %\addressfont\color{quotecolor}\footnotesize\thepage/\pageref{lastpage}}%addressfont
+          \ifthenelse{\equal{\fr}{1}} {\fancyfoot[c]{\sffamily\color{quotecolor}\footnotesize Mis \`a jour -- \today}}%
+          {\fancyfoot[c]{\sffamily\color{quotecolor}\footnotesize Last updated -- \today}}%
         }%
         \pagestyle{plain}}{}}%
     \AtEndDocument{\label{lastpage}}\else\fi}}
