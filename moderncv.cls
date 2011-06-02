@@ -72,14 +72,16 @@
 %\newif\if@CJK\@CJKfalse
 %\DeclareOption{CJK}{\@CJKtrue}
 \newcommand*{\fr}{0}
-\newcommand*{\obj}{\textbf{Objectives: }}
-
+\newcommand*{\obj}{\textbf{$\bullet$ Objectives: }}
+\newcommand*{\techUsed}{\textbf{$\bullet$~Technologies used: }}
 
 \DeclareOption{en}{\renewcommand*{\fr}{0}
-  \renewcommand*{\obj}{\textbf{Objectives: }}
+  \renewcommand*{\obj}{\textbf{$\bullet$ Objectives: }}
+  \renewcommand*{\techUsed}{\textbf{$\bullet$~Technologies used: }}
 }
 \DeclareOption{fr}{\renewcommand*{\fr}{1}
-  \renewcommand*{\obj}{\textbf{Objectifs : }}
+  \renewcommand*{\obj}{\textbf{$\bullet$ Objectifs : }}
+  \renewcommand*{\techUsed}{\textbf{$\bullet$~Technologies utilis\'ees : }}
 }
 
 % execute default options
