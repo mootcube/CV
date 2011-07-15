@@ -7,7 +7,7 @@
 
 
 
-\documentclass[11pt,a4paper]{moderncv}
+\documentclass[11pt,a4paper,en]{moderncv}
 
 \usepackage[pdftex]{hyperref}
 \usepackage[english]{babel}
@@ -34,16 +34,16 @@
 % personal data
 \firstname{Mathieu}
 \familyname{CHATAIGNER}
-\title{Postgraduate student \newline{}\large{Information Systems Architecture\newline{}Grid Computing}}               % optional, remove the line if not wanted
-\address{\Writinghand~1 rue de la garenne}{80480 Salouel -- France}    % optional, remove the line if not wanted
-\mobile{mobile +33 6 84 85 83 22}                    % optional, remove the line if not wanted
-%\phone{phone (optional)}                      % optional, remove the line if not wanted
+\title{Postgraduate student \newline{}\large{Information Systems Architecture\newline{}\newline{}}}               % optional, remove the line if not wanted
+\address{\Writinghand~CH369, Chilver Hall, The Drive}{MK43 0AL Warley End -- UK}    % optional, remove the line if not wanted
+\mobile{+33 684 858 322}                    % optional, remove the line if not wanted
+\phone{+33 970 448 289}                      % optional, remove the line if not wanted
 %\fax{fax (optional)}                          % optional, remove the line if not wanted
 \email{mathieu.chataigner@gmail.com}                      % optional, remove the line if not wanted
 %\homepage{homepage (optional)}                % optional, remove the line if not wanted
 \extrainfo{Age 23\\French nationality\\Driving license} % optional, remove the line if not wanted
 %\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-%\quote{quote (optional)}                 % optional, remove the line if not wanted
+\quote{\huge Job search \small\\~\\ \Large Junior Software Engineer}                 % optional, remove the line if not wanted
 
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter
@@ -73,25 +73,46 @@
 \section{Education}
 
 \cventry{2010 -- 2011}{MSc Computational and Software Techniques in E-engineering}{~\newline{}\href{http://www.cranfield.ac.uk/}{Cranfield University}}{United Kingdom}{}{}  % arguments 3 to 6 can be left empty
-\cventry{2008 -- 2011}{MSc Information Systems Architecture\newline{}(equivalent of a Master's Degree in Information Systems)}{~\newline{}\href{http://asi.insa-rouen.fr/welcome-in-asi/view?set_language=en}{Institut National des Sciences Appliquées de Rouen}}{France}{}{}  % arguments 3 to 6 can be left empty
+\cventry{2006 -- 2011}{MSc Information Systems Architecture\newline{}(Equivalent of a Master's Degree in Information Systems)}{~\newline{}\href{http://asi.insa-rouen.fr/welcome-in-asi/view?set_language=en}{National Institute of Applied Sciences of Rouen}}{France}{}{}  % arguments 3 to 6 can be left empty
+\cventry{2006}{French Scientific Baccalaureate}{~\newline{}with honors}{France}{}{}  % arguments 3 to 6 can be left empty
+
 
 \section{Experience}
 
-\cventry{Summer 2010}{Internship as a web developer}{\href{http://www.auchan.fr/}{Auchan France}}{Villeneuve d'Ascq, France}{}{\textbf{Objectives :} Eight-week industrial placement consisting in developing an intranet site. It aims at referencing existing collaborative solutions for team work.\newline Use of Microsoft SharePoint\texttrademark, XML, XSL, Javascript.}
+\cventry{05/2011 -- 08/2011}{Thesis}{}{Cranfield University, UK}{}{\obj 
+Design, implementation and tests of Data Mining algorithms on a Cloud Computing platform.
+\newline \techUsed Microsoft Windows Azure, C\#, .net framework.}
 
-\cventry{02/2010 -- 07/2010}{Part-time developer}{\href{http://www.unit.eu/}{Unit foundation}}{Rouen, France}{}{Industrial project certified ISO 9001: 2008 (Quality Management) carried out by 9 students.\newline{}%
-\textbf{Objectives :} 
+\cventry{Summer 2010}{Internship as a web developer}{\href{http://www.auchan.fr/}{Auchan France}}{Villeneuve d'Ascq, France}{}{\obj Eight-week industrial placement consisting in developing an intranet site. It aims at referencing existing collaborative solutions for team work.\newline \techUsed Microsoft SharePoint\texttrademark, XML, XSL, JavaScript.}
+
+\cventry{02/2010 -- 07/2010}{Part-time developer}{\href{http://www.unit.eu/}{Unit foundation}}{Rouen, France}{}{Industrial project certified ISO 9001: 2008 (Quality Management) carried out by 9 students.\newline{}\obj
 Improve and add features to UNIT search engine for free educational contents on Internet (\href{http://www.unit.eu/}{www.unit.eu}). \newline{}
-Use of J2EE, Tomcat, XML, XSL, Javascript, Open Archive Initiative, ORI-OAI.}
+\techUsed J2EE, Tomcat, XML, XSL, JavaScript, Open Archive Initiative, ORI-OAI.}
 
-\cventry{Summer 2009}{Internship as a developer}{\href{http://uk.c-s.fr/}{Communications \& Systems}}{Toulouse, France}{}{\textbf{Objectives :} Eight-week training period consisting in looking for an Open-Sources solution to draw large graphs of data and implementing it.\newline{}Use of Java, XML, XSL.}
+\cventry{01/2010 -- 07/2010}{Web developer}{\href{http://ajir.insa-rouen.fr/}{AJIR (Junior Enterprise of INSA)}}{Rouen, France}{}{
+\obj
+Development of a web platform that will manage the generation of the contract for internships of a school of engineering.\newline{}%
+\techUsed Python, Django, JavaScript, HTML, \LaTeX.}
 
+\cventry{2009 -- 2010}{IT Manager}{\href{http://ajir.insa-rouen.fr/}{AJIR (Junior Enterprise of INSA)}}{Rouen, France}{}{
+\obj
+Manage the Linux server and computers of the association. Update the website. Participation in all association's events. Vote at board of administration.}
+
+\cventry{Summer 2009}{Internship as a developer}{\href{http://uk.c-s.fr/}{Communications \& Systems}}{Toulouse, France}{}{
+\obj
+ Eight-week training period consisting in looking for an Open-Sources solution to draw large graphs of data and implementing it.\newline{}\techUsed Java, XML, XSL.}
+%\newpage
 \section{Computer skills}
 
-\cvcomputer{Programming languages}{C/C++, Java, Python, MPI}{Distributed computing}{Knowledge in RMI, Web Services, CORBA}
-\cvcomputer{Web development}{J2EE, XHTML, CSS, Javascript, PHP}{Networks}{Experience in TCP/IP, DNS}
-\cvcomputer{Script languages}{Python, Bash, Perl}{Databases}{MySQL, PostgreSQL}
-\cvcomputer{Operating systems}{Both Linux and Windows}{Other}{Matlab, \LaTeX, Office}
+\cvcomputer{General Knowledge}{\textbf{Cloud Computing}, virtualization, High Performance Computing}
+{Programming languages}{\textbf{Java}, C/C++, Python}
+\cvcomputer{Web developpment}{\textbf{JEE}, HTML, CSS, JavaScript, PHP}
+{Distributes computing}{\textbf{Web Services}, RMI, Grid Services, CORBA}
+\cvcomputer{Databases}{MySQL, PostgreSQL}
+{Scripint languages}{Python, Bash, Perl}
+\cvcomputer{Networks}{Knowledge in \textbf{TCP/IP}, DNS, rooting}
+{Other}{\textbf{Linux}, Windows, UML, \textbf{Matlab}, \LaTeX, Office}
+
 
 \section{Languages}
 
@@ -103,6 +124,8 @@ Use of J2EE, Tomcat, XML, XSL, Javascript, Open Archive Initiative, ORI-OAI.}
 
 
 \cvline{Sports}{Inline skates, Fitness, Bike, Swimming}
+\cvline{Other}{Board games}
+
 %\cvline{Card games}{\small Magic the Gathering}
 
 %\renewcommand{\listitemsymbol}{-} % change the symbol for lists
