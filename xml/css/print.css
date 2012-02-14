@@ -1,0 +1,34 @@
+/*copyright mathieu CHATAIGNER, please send me a message if you want to use this template*/
+
+.print { display:none }
+
+/*margin padding and size*/
+.block{width:100%;}
+.innerBlock{padding: 10px 10px 0px 10px;}
+.enteteBlock{padding: 0 10px 0px 10px;}
+.entete{padding-top:0px;padding-bottom:0px;}
+table{margin-top:0px;margin-bottom:0px;border-spacing:0px 15px;}
+#title{padding-top:0px ;padding-bottom: 0px;}
+#subtitle{padding-top:0px ;padding-bottom: 20px;}
+#content h2{margin-bottom:5px;}
+
+/*div*/
+.single{clear:both;padding-left:5%;padding-right:5%;}
+.center{text-align:center;}
+.left{margin-left:0;}
+.right{margin-right:0;}
+.subject{font-weight:bold;}
+.address{font-style:italic;}
+.footer{padding-bottom:0px;}
+
+/*colors*/
+.bgcolored{color:#819FF7;}
+#entete.bgcolored{color:#000000;}
+#entete h2,#entete h3,#entete ul{color:#dddddd;}
+a{color:#000000; }
+a:hover,a:focus {color:#000000; }
+
+/*font*/
+#entete h1{font-size:2.2em;}
+
+

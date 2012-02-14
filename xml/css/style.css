@@ -1,0 +1,32 @@
+/*copyright mathieu CHATAIGNER, please send me a message if you want to use this template*/
+/*default*/
+body{background-color:#dce2df;}
+
+.print { display:block }
+
+/*containers*/
+div#outConteneur{width:960px;}
+div#conteneur{margin-left: 10px;margin-right:10px; width:940px;}
+
+/*margin padding and size*/
+.block{background-color:#FFFFFF;left:80px;width:780px;}
+.innerBlock{padding: 0px 50px 8px 50px;}
+.enteteBlock{padding: 0px 50px 20px 50px;}
+.entete{padding-top:40px;padding-bottom:5px;}
+#entete{margin-top:5px; border-top-left-radius:50px;border-top-right-radius:50px;}
+#enteteLeft{width:65%;}
+#enteteRight{width:35%;}
+#title{padding-top: 40px;padding-bottom: 0px;}
+#subtitle{padding-top: 20px;padding-bottom: 50px;}
+#content{border-bottom-left-radius:50px;border-bottom-right-radius:50px;}
+#content h2{margin-bottom:0px;}
+table{border-spacing:15px 20px;}
+.footer{padding-bottom:20px;}
+
+/*colors*/
+.bgcolored{background-color:#819FF7;color:#FFFFFF;}
+a{color:#3f82b9;}
+a:hover,a:focus {color:#3f82b9; }
+
+/*fonts*/
+#entete h1{font-size:2.5em;}
