@@ -2,8 +2,9 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns="http://www.w3.org/1999/xhtml">
 <xsl:output method="xml" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" indent="yes"/>
 
-<xsl:variable name="techUsed">Technologies : </xsl:variable>
-<xsl:variable name="tools">Outils : </xsl:variable>
+<xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
+<xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
+<xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
 
 <xsl:template match="cv"  >
 
@@ -155,7 +156,7 @@
 <xsl:template match="competence">
 							<tr>
 								<th><xsl:apply-templates select="field"/></th><td><xsl:apply-templates select="description"/>
-								<xsl:if test="tools"><br/><p><span class="subject"><xsl:copy-of select="$tools"/></span> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<xsl:if test="tools"><br/><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
@@ -187,7 +188,7 @@
 									</xsl:otherwise>
 									</xsl:choose>
 									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.<br/><xsl:apply-templates select="description"/>
-									<xsl:if test="tools"><br/><p><span class="subject"><xsl:copy-of select="$techUsed"/></span> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+									<xsl:if test="tools"><br/><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
@@ -207,7 +208,7 @@
 							<tr>
 								<th><xsl:apply-templates select="title"/></th>
 								<td><!--xsl:copy-of select="."/--><xsl:apply-templates select="description"/>
-								<xsl:if test="tools"><br/><p><span class="subject"><xsl:copy-of select="$techUsed"/></span> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<xsl:if test="tools"><br/><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
