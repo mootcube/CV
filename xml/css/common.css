@@ -22,7 +22,7 @@ th{width:110px;vertical-align:top;text-align:left;}
 #content h2{padding-bottom:2px;border-width:2px;border-bottom-style:solid;font-weight:normal;}
 #title{padding-left: 50px;padding-right: 50px;}
 #subtitle{padding-left: 50px ;padding-right: 50px;}
-
+p{margin-bottom:0;padding-bottom:0;}
 
 /*div*/
 .single{clear:both;padding-left:5%;padding-right:5%;}
@@ -52,3 +52,12 @@ a:hover,a:focus {text-decoration:underline;}
 
 /*other*/
 #contact {display:block;visibility:hidden;float:left;position:absolute;top:0px;left:25px;background-color:#FF0000;width:50px;padding-top:290px;}
+
+
+@page {  
+ size: auto;
+ margin-left: 50%;  
+ margin-right: 0%;  
+ margin-top: 0%;  
+ margin-bottom: 0%;  
+} 

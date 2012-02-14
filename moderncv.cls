@@ -234,7 +234,7 @@
 \providecommand*{\quotefont}{}
 \providecommand*{\sectionfont}{}
 \providecommand*{\subsectionfont}{}
-\providecommand*{\hintfont}{\small\sffamily}
+\providecommand*{\hintfont}{\normalsize\sffamily}
 
 % styles
 \providecommand*{\firstnamestyle}[1]{{\firstnamefont\color{firstnamecolor}#1}}

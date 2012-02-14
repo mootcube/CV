@@ -1,215 +1,182 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns="http://www.w3.org/1999/xhtml">
-<xsl:output method="xml" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" indent="yes"/>
+<xsl:output method="text" encoding="UTF-8"/>
+
+<xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
+<xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
+<xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
 
 <xsl:template match="cv"  >
+<!-- <xsl:value-of select=""/> -->
+%% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<xsl:attribute name="xml:lang"><xsl:value-of select="lang"/></xsl:attribute>
-	<xsl:attribute name="lang"><xsl:value-of select="lang"/></xsl:attribute>
-	<head>
-		<title><xsl:value-of select="title"/> - <xsl:value-of select="profile/name"/><xsl:text> </xsl:text><xsl:value-of select="profile/surname"/></title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ><xsl:attribute name="xml:lang"><xsl:value-of select="lang"/></xsl:attribute><xsl:attribute name="lang"><xsl:value-of select="lang"/></xsl:attribute></meta>
-		<meta http-equiv="Content-Language" ><xsl:attribute name="content"><xsl:value-of select="lang"/></xsl:attribute></meta>
-		<meta name="robots" content="All" />
-		<meta name="description" ><xsl:attribute name="content"><xsl:value-of select="description"/></xsl:attribute></meta>
-		<meta name="keywords" ><xsl:attribute name="xml:lang"><xsl:value-of select="lang"/></xsl:attribute><xsl:attribute name="lang"><xsl:value-of select="lang"/></xsl:attribute><xsl:attribute name="content"><xsl:value-of select="keywords"/></xsl:attribute></meta>
-		<meta name="reply-to"  ><xsl:attribute name="content"><xsl:value-of select="replyto"/></xsl:attribute></meta>
-		<meta name="distribution" content="global" />
-		<meta name="author" ><xsl:attribute name="xml:lang"><xsl:value-of select="lang"/></xsl:attribute><xsl:attribute name="lang"><xsl:value-of select="lang"/></xsl:attribute><xsl:attribute name="content"><xsl:value-of select="author"/></xsl:attribute></meta>
-		<meta name="copyright"  ><xsl:attribute name="content"><xsl:value-of select="copyright"/></xsl:attribute></meta>
-		<!-- copyright mathieu CHATAIGNER, please send me a message if you want to use this template-->
-		<meta name="identifier-url"  ><xsl:attribute name="content"><xsl:value-of select="update/@site"/></xsl:attribute></meta>
-		<meta name="expires" content="never" />
-		<meta name="Date-Creation-yyyymmdd"  ><xsl:attribute name="content"><xsl:value-of select="creationDate/y"/>/<xsl:value-of select="creationDate/m"/>/<xsl:value-of select="creationDate/d"/></xsl:attribute></meta>
-		<meta name="Date-Revision-yyyymmdd"  ><xsl:attribute name="content"><xsl:value-of select="modificationDate/y"/>/<xsl:value-of select="modificationDate/m"/>/<xsl:value-of select="modificationDate/d"/></xsl:attribute></meta>
-		<!--meta name="viewport" content="width=device-width"/-->
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-		<link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
-	</head>
-	<body>
-		<!--[if lte IE 6]>
-		<style type="text/css">
-		body{text-align:center;}
-		#cv{margin-left:30px; margin-right:30px; width:100%;}
-		#conteneur{width:800px; display:inline; text-align:left;}
-		</style>
-		<![endif]-->
-		<script type="text/javascript">
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-24574529-1']);
-		  _gaq.push(['_trackPageview']);
 
-		  (function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+\documentclass[11pt,a4paper,<xsl:apply-templates select="lang"/>]{moderncv}
+%\documentclass[11pt,a4paper,pdfcenterwindow,pdffitwindow,pdftoolbar=false,pdfmenubar=false,pdfpagelayout=OneColumn]{moderncv}
 
-		</script>
-		<!--  <xsl:value-of select=""/>  -->
-		
-		<div id="outConteneur">
-			<div id="conteneur">
-				<div id="entete" class="block left right bgcolored">
-					<div class="enteteBlock">
-						<div id="enteteLeft" class="entete left">
-							<h1><xsl:value-of select="profile/name"/><xsl:text> </xsl:text><xsl:value-of select="profile/surname"/></h1>
-							<h2><xsl:value-of select="profile/title"/></h2>
-							<h3><xsl:value-of select="profile/field"/></h3>
-						</div>
-						<div id="enteteRight" class="entete right">
-							<ul id="info">
-								<li><address><xsl:value-of select="profile/address/street"/><br/><xsl:value-of select="profile/address/cp"/></address></li>
-								<li><xsl:value-of select="profile/phone"/></li>
-								<li><xsl:value-of select="profile/mail"/></li>
-								<!--li><a><xsl:attribute name="href">mailto:<xsl:value-of select="profile/mail"/></xsl:attribute><xsl:value-of select="profile/mail"/></a></li-->
-								<li>Age : <xsl:value-of select="profile/age"/></li>
-								<li><xsl:value-of select="profile/drive"/></li>
-							</ul>
-						</div>
-						<div class="clear"></div>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-				<div id="divtitle" class="block left right">
-					<h1 id="title" class="center colored"></h1><!--RECHERCHE D'EMPLOI</h1>
-					<h1 id="subtitle" class="center">Ingénieur Junior dans les nouvelles technologies.</h1-->
-				</div>
-				<div class="clear"></div>
-				<div id="content" class="block left right">
-					<div class="innerBlock">
-						<h2><a name="formation"></a>Formation</h2>
-						<table>
+%\topmargin 5cm
+
+\usepackage[pdftex]{hyperref}
+%\usepackage[francais]{babel}
+\usepackage[none]{hyphenat}
+\usepackage{eurosym}
+
+\pdfminorversion=7
+\pdfobjcompresslevel=3
+
+\hypersetup{%
+  pdftitle={<xsl:apply-templates select="profile/name"/> <xsl:apply-templates select="surname"/> -- <xsl:apply-templates select="title"/>},
+}
+
+% moderncv themes
+\moderncvtheme[]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+%\usepackage[scale=0.9]{geometry}
+
+
+\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+\AtBeginDocument{\setlength{\maketitlenamewidth}{12cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{<xsl:apply-templates select="profile/name"/>}
+\familyname{<xsl:apply-templates select="profile/surname "/>}
+\title{<xsl:apply-templates select="profile/title"/>\newline{}\large{<xsl:apply-templates select="profile/field"/>}}               % optional, remove the line if not wanted
+\address{\Writinghand~<xsl:apply-templates select="profile/address/street"/>}{<xsl:apply-templates select="profile/address/cp"/>}    % optional, remove the line if not wanted
+\mobile{<xsl:apply-templates select="profile/phone"/>}                    % optional, remove the line if not wanted
+%\phone{+33 9 70 44 82 89}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{<xsl:apply-templates select="profile/mail"/>}                      % optional, remove the line if not wanted
+\homepage{<xsl:apply-templates select="update/@site"/>}                % optional, remove the line if not wanted
+\extrainfo{Age <xsl:apply-templates select="profile/age"/>\\<xsl:apply-templates select="profile/drive"/>} % optional, remove the line if not wanted
+%\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\maketitle
+\vspace{-1.5em}
+
+\section{<xsl:apply-templates select="formations/title"/>}
 <xsl:apply-templates select="formations/formation"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="competences"></a>Compétences</h2>
-						<table>
+
+\section{<xsl:apply-templates select="competences/title"/>}% informatiques}
+
 <xsl:apply-templates select="competences/competence"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="experiences"></a>Expériences</h2>
-						<table>
+
+\section{<xsl:apply-templates select="languages/title"/>}
+
+<xsl:apply-templates select="languages/language"/>
+
+\section{<xsl:apply-templates select="experiences/title"/>}
+
 <xsl:apply-templates select="experiences/experience"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="loisirs"></a>Centres d'intérêts</h2>
-						<table>
+
+\section{<xsl:apply-templates select="interests/title"/>}
+
 <xsl:apply-templates select="interests/interest"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="projets"></a>Projets effectués</h2>
-						<table>
+
+\section{<xsl:apply-templates select="projects/title"/>}
+
 <xsl:apply-templates select="projects/project"/>
-						</table>
-					</div>
-					<div class="clear"></div>
-					<div class="footer innerBlock">
-						Mis à jour le <xsl:value-of select="modificationDate/d"/>/<xsl:value-of select="modificationDate/m"/>/<xsl:value-of select="modificationDate/y"/><br/>Mon site internet pour la dernière version : <a><xsl:attribute name="href"><xsl:value-of select="update/@site"/></xsl:attribute><xsl:value-of select="update/@site"/></a>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-			<div style="margin:0;padding:0;display:none;visibility:hidden"><h1>Mathieu CHATAIGNER, Mathieu CHATAIGNIER CHATIAGNER CHATIAGNIER</h1></div>
-		</div>
-	</body>
-</html>
+
+
+%\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5 \cite{book1}}
+%\cvlistdoubleitem{Item 3}{}
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+%\nocite{*} 
+%\bibliographystyle{plain}
+%\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
+% LocalWords:  Cranfield Institut des Appliquées de Rouen Auchan Villeneuve XSL
+% LocalWords:  d'Ascq SharePoint Javascript EE ORI OAI MySQL PostgreSQL RMI PHP
+% LocalWords:  CORBA TCP IP DNS TOEIC Inline XHTML CSS MSc
+
+
+
 </xsl:template>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<xsl:template match="formation">
-							<tr>
-								<th><xsl:value-of select="@year"/></th><td><xsl:apply-templates/>, <a ><xsl:attribute name="href"><xsl:value-of select="@web"/></xsl:attribute><xsl:value-of select="@school"/><xsl:if test="@schoollong"> (<xsl:value-of select="@schoollong"/>)</xsl:if></a>, <xsl:value-of select="@location"/>.</td>
-							</tr>
+<xsl:template match="formation">\cventry{<xsl:apply-templates select="year"/>}{<xsl:apply-templates select="title"/>}{\newline{}\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if>}}{<xsl:apply-templates select="location"/>}{}{}  % arguments 3 to 6 can be left empty
 </xsl:template>
 
-<xsl:template match="competence">
-							<tr>
-								<th><xsl:value-of select="@field"/></th><td><xsl:apply-templates/>
-								<xsl:if test="@tools"><br/><span class="subject">Outils</span> : <xsl:value-of select="@tools"/>.</xsl:if>
-								</td>
-							</tr>
+<xsl:template match="competence">\cvline{\textbf{<xsl:apply-templates select="field"/>}}{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</xsl:if>}
+<!--\cventry{<xsl:value-of select="field"/>}{<xsl:apply-templates select="description"/>}{}{}{}{<xsl:if test="tools">\techUsed <xsl:value-of select="tools"/>.</xsl:if>}  % arguments 3 to 6 can be left empty
+%\cvcomputer
+%{<xsl:value-of select="field"/>}{<xsl:apply-templates/>}{}{}--></xsl:template>
+
+<xsl:template match="experience">\cventry{<xsl:apply-templates select="year"/>} {<xsl:apply-templates select="title"/>} {\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="entreprise"/>}} {<xsl:apply-templates select="location"/>} {} {<xsl:copy-of select="$obj"/> <xsl:apply-templates select="description"/> <xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> %Utilisation de 
+<xsl:apply-templates select="tools"/>.</xsl:if>\vspace{1.1em}}%
 </xsl:template>
 
-<xsl:template match="experience">
-							<tr>
-								<th><xsl:value-of select="@year"/></th><td>
-									<span class="subject">
-									<xsl:choose>
-									<xsl:when test="@titleweb">
-										<a>
-											<xsl:attribute name="href">
-												<xsl:value-of select="@titleweb"/>
-											</xsl:attribute>
-											<xsl:value-of select="@title"/>
-										</a>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:value-of select="@title"/>
-									</xsl:otherwise>
-									</xsl:choose>
-									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:value-of select="@web"/></xsl:attribute><xsl:value-of select="@entreprise"/></a></span>, <xsl:value-of select="@location"/>.<br/><xsl:apply-templates/>
-									<xsl:if test="@tools"><br/><span class="subject">Technologies utilisées</span> : <xsl:value-of select="@tools"/>.</xsl:if>
-								</td>
-							</tr>
+<xsl:template match="interest" >\cvline{<xsl:apply-templates select="field"/>}{<xsl:apply-templates select="description"/>}%
 </xsl:template>
 
-<xsl:template match="interest" >
-							<tr>
-								<th><xsl:value-of select="@field"/></th>
-								<td><xsl:apply-templates/></td>
-							</tr>
+<xsl:template match="language" >\cvlanguage{<xsl:apply-templates select="name"/>}{<xsl:apply-templates select="level"/>}{<xsl:if test="description"><xsl:apply-templates select="description"/>.</xsl:if>\hfill}%
 </xsl:template>
 
-<xsl:template match="p">
-<xsl:value-of select="."/><br/>
+<xsl:template match="project" >\cvline{\textbf{<xsl:apply-templates select="title"/>}}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</xsl:if>}\end{minipage}\vspace{0.5em}}%
 </xsl:template>
 
-<xsl:template match="project" >
-							<tr>
-								<th><xsl:value-of select="@title"/></th>
-								<td><!--xsl:copy-of select="."/--><xsl:apply-templates/></td>
+<xsl:template match="strong">\textbf{<xsl:apply-templates/>}</xsl:template>
 
-							</tr>
-</xsl:template>
+<xsl:template match="newline">\newline{} </xsl:template>
 
-<xsl:template match="strong">
-<span class="subject"><xsl:value-of select="."/></span>
-</xsl:template>
+<xsl:template match="sharp">\#</xsl:template>
 
-<xsl:template match="newline"><br/></xsl:template>
+<xsl:template match="euro">\euro{}</xsl:template>
 
-<xsl:template match="link">
-<a style="white-space:nowrap;"><xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute><xsl:apply-templates/></a>
-</xsl:template>
+<xsl:template match="amp">\&amp;</xsl:template>
 
-<xsl:template match="*/text()">
-<xsl:value-of select="."/>
-</xsl:template>
+<xsl:template match="link">\href{<xsl:value-of select="@href"/>}{<xsl:apply-templates/>}</xsl:template>
+
+<xsl:template match="*/text()"><xsl:value-of select="."/></xsl:template>
 
 </xsl:stylesheet>

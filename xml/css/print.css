@@ -4,13 +4,15 @@
 
 /*margin padding and size*/
 .block{width:100%;}
-.innerBlock{padding: 10px 10px 0px 10px;}
-.enteteBlock{padding: 0 10px 0px 10px;}
+.innerBlock{padding: 10px 05px 0px 05px;}
+.enteteBlock{padding: 0 05px 0px 05px;}
 .entete{padding-top:0px;padding-bottom:0px;}
-table{margin-top:0px;margin-bottom:0px;border-spacing:0px 15px;}
+table{margin-top:0px;margin-bottom:0px;border-spacing:0px 5px;}
 #title{padding-top:0px ;padding-bottom: 0px;}
 #subtitle{padding-top:0px ;padding-bottom: 20px;}
 #content h2{margin-bottom:5px;}
+p{margin-top:2px;padding-top:0;}
+tr{page-break-inside:avoid;}
 
 /*div*/
 .single{clear:both;padding-left:5%;padding-right:5%;}
