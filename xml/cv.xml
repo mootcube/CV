@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="cv_xslt.xsl" ?>
+<cv>
+	<update date="10/02/2012" site="http://mathieu.chataigner.pro/"/>
+	<title>CV</title>
+	<description>Je m'appelle Mathieu CHATAIGNER. Cette page représente mon Curriculum Vitæ.</description>
+	<keywords>Mathieu Mahtieu CHATAIGNER CHATAIGNIER</keywords>
+	<replyto>mathieu@chataigner.pro</replyto>
+	<author>Mathieu CHATAIGNER</author>
+	<copyright>Mathieu CHATAIGNER</copyright>
+	<creationDate><d>15</d><m>07</m><y>2011</y></creationDate>
+	<modificationDate><d>13</d><m>02</m><y>2012</y></modificationDate>
+	<lang>fr</lang>
+	<profile>
+		<name>Mathieu</name><surname>CHATAIGNER</surname>
+		<title>Ingénieur INSA</title>
+		<field>Architecture des Systèmes d'Information</field>
+		<address><street>1 rue de la garenne</street><cp>80480 Salouel</cp></address>
+		<phone>06.84.85.83.22</phone>
+		<mail>mathieu.chataigner@gmail.com</mail>
+		<age>23 ans</age>
+		<drive>Permis B</drive>
+	</profile>
+	<formations>
+		<formation year="2010 - 2011" school="Université de Cranfield" web="http://www.cranfield.ac.uk/" location="Angleterre" >Ingénieur en Mathématiques Appliquée et Informatique</formation>
+		<formation year="2006 - 2011" school="INSA de Rouen" schoollong="Institut National des Sciences Appliquées" web="http://asi.insa-rouen.fr/" location="Seine-Maritime (76)" >Ingénieur en Architecture des Systèmes d’Information</formation>
+		<formation year="2006" school="Lycée Jean-Baptiste de la Salle" location="Rouen, Normandie" web="http://www.jbsrouen.org/site/index.php">Baccalauréat S spé. SVT option Physique-Chimie avec mention</formation>
+	</formations>
+	<competences>
+		<competence field="Application" tools="Java/JEE, C#, Python, UML, SQL">Analyse logicielle et système, rédaction de spécifications, conception orientée objet, modélisation relationnelle, intégration, reprise de l'existant, réalisation de cahier de tests.</competence>
+		<competence field="Grande échelle" tools="JEE, Web Services, Windows Azure, MPI">Architecture répartie, Cloud Computing, calculs haute performance.</competence>
+		<competence field="Réseau" tools="modèle TCP/IP, DNS, NAT, firewall">Modélisation logique, conception de l'architecture, déploiement, notions en sécurité.</competence>
+		<competence field="Autre" tools="GNU/Linux, Bash, Python">Administration système.</competence>
+		<competence field="Anglais">Professionnel (score TOEIC: <strong>880/990</strong>, déc. 2010).</competence>
+	</competences>
+	<experiences>
+		<experience year="2011" title="Thèse de Master" entreprise="Cranfield University" web="http://www.cranfield.ac.uk/" location="Angleterre" tools="MapReduce, Microsoft Windows Azure, C#, .net Framework">Spécification, conception, développement et tests d'une application visant à effectuer des opération de regroupement d'informations dans un environnement de Cloud Computing. Application du Design Pattern MapReduce dans le but d'aggréger les différentes simulations concernants les pertes et profits de produits boursiers.</experience>
+		<experience year="2010" title="Projet INSA Certifié (PIC)" titleweb="http://asi.insa-rouen.fr/formation/pic" entreprise="Fondation UNIT" web="http://www.unit.eu" location="Rouen (76)" tools="Java, JEE, Tomcat, XML, XSL, JavaScript, Open Archive Initiative, ORI-OAI">Projet industriel à mi-temps, certiﬁé ISO 9001 : 2008 (Management de la Qualité). Amélioration et ajout de fonctionnalités au portail UNIT, moteur de recherche de ressources pédagogiques libres sur Internet : <link href="http://www.unit.eu/">www.unit.eu</link>.</experience>
+		<experience year="2010" title="Stage de développement Web" entreprise="Auchan France" web="http://www.auchan.fr/" location="Villeneuve d'Ascq (59)" tools="Microsoft SharePoint, XML, XSL, JavaScript">Développement d'un site intranet. Il a pour but de référencer les solutions collaboratives disponibles à Auchan permettant d'accroître la productivité des équipes.</experience>
+		<experience year="2010" title="Étude en Junior Entreprise" entreprise="Association Junior INSA Rouen (AJIR)" web="http://ajir.insa-rouen.fr" location="Rouen (76)" tools="Python, Framework Django, HTML, CSS">Développement d’un portail de gestion électronique des stages : <link href="https://stage.insa-rouen.fr/">stage.insa-rouen.fr</link>.</experience>
+		<experience year="2009 - 2010" title="Junior Entreprise" entreprise="AJIR" web="http://ajir.insa-rouen.fr" location="Rouen (76)">Membre du Conseil d’Administration et Responsable Informatique.<br/> Troisième année d'existence (Pépinière-Junior-Entreprise, type Junior-Entreprise) : 20000€ de CA, 35 membres. Mon rôle a consisté en l'amélioration du site internet et du support aux membres.</experience>
+		<experience year="2009" title="Stage de développement" entreprise="Communications &amp; Systèmes" web="http://www.c-s.fr/" location="Toulouse (31)" tools="Java, XML, XSL">Recherche d’une solution de type Open-Source permettant d’aﬃcher des grands graphes de données et son implémentation.</experience>
+	</experiences>
+
+	<interests>
+		<interest field="Sport">Pratique régulière du VTT, du roller, de la musculation et de la natation.</interest>
+		<interest field="Autre">Amateur de jeux de société.</interest>
+		<interest field="Musique">Pratique du piano pendant 7 ans.<newline/> Styles de musique favoris : Métal symphonique, Electro House, Classique.</interest>
+	</interests>
+
+	<projects>
+		<project title="HPC - MPI Laplace" tools="">Projet de l'UV Calculs Haute Performance. Réalisé en C avec la librairie <link href="http://fr.wikipedia.org/wiki/Message_Passing_Interface">MPI</link>, ce projet résout l'équation de Laplace en 2D avec des valeurs limites périphériques fixes de manière répartie sur plusieurs machines.</project>
+		<project title="GridService" tools="">Projet Java de réalisation d'un Grid Service (Web Service utilisant le GridComputing comme ressource et impliquant des contraintes de sécurité avec gestion des certificats). Utilisation du middleware <link href="http://www.globus.org/toolkit/">Globus Toolkit</link>.</project>
+		<project title="BlatteWar" tools="">Projet d'informatique répartie en Java avec la technologie <link href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html">RMI</link>. BlatteWar est une arène virtuelle où s'affrontent les IA conçues par des joueurs représentées par des blattes. La dernière vivante a gagné. Une interface web a été mise en place pour suivre l'avancement des parties.</project>
+		<project title="RobotRubik" tools="">Il s'agit d'un robot conçu en LEGO Mindstorm qui résout le Rubik's Cube. Fan de ce casse-tête, j'ai réalisé la partie informatique du robot avec 3 autres camarades en Java par le biais de l'API <link href="http://lejos.sourceforge.net/">leJOS</link>.</project>
+		<project title="ASIAventure" tools="">Jeu d'aventure en mode texte. Ce projet a été effectué lors de l'UV Programmation Avancée (programmation objet avec le langage Java).</project>
+	</projects>
+</cv>
+
