@@ -36,7 +36,7 @@
 }%
 
 % moderncv themes
-\moderncvtheme[green]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)<!--
+\moderncvtheme[green]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)<!--
 %\moderncvtheme[green]{classic}                % idem
 
 -->
@@ -54,10 +54,10 @@
 %\phone{+33 9 70 44 82 89}                      % optional, remove the line if not wanted
 %\fax{fax (optional)}                          % optional, remove the line if not wanted-->
 \email{<xsl:apply-templates select="profile/mail"/>}                      % optional, remove the line if not wanted
-%\homepage{<xsl:apply-templates select="update/@site"/>}                % optional, remove the line if not wanted
+\homepage{<xsl:apply-templates select="update/@site"/>}                % optional, remove the line if not wanted
 \extrainfo{Age <xsl:apply-templates select="profile/age"/>\\<xsl:apply-templates select="profile/drive"/>} % optional, remove the line if not wanted
 \photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%
+%\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%
 <!--
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter%
