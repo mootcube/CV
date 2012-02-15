@@ -149,22 +149,22 @@
 
 <xsl:template match="formation">
 							<tr>
-								<th><xsl:apply-templates select="year"/></th><td><xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.</td>
+								<th><xsl:apply-templates select="year"/></th><td><p><xsl:apply-templates select="title"/>,</p><p> <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.</p></td>
 							</tr>
 </xsl:template>
 
 <xsl:template match="competence">
 							<tr>
-								<th><xsl:apply-templates select="field"/></th><td><xsl:apply-templates select="description"/>
-								<xsl:if test="tools"><br/><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<th><xsl:apply-templates select="field"/></th><td><p><xsl:apply-templates select="description"/></p>
+								<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
 
 <xsl:template match="language">
 							<tr>
-								<th><xsl:apply-templates select="name"/></th><td><xsl:apply-templates select="level"/>
-								<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.
+								<th><xsl:apply-templates select="name"/></th><td><p><xsl:apply-templates select="level"/>
+								<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
 								</td>
 							</tr>
 </xsl:template>
@@ -173,7 +173,7 @@
 <xsl:template match="experience">
 							<tr>
 								<th><xsl:apply-templates select="year"/></th><td>
-									<span class="subject">
+									<p><span class="subject">
 									<xsl:choose>
 									<xsl:when test="titleweb">
 										<a>
@@ -187,8 +187,8 @@
 										<xsl:apply-templates select="title"/>
 									</xsl:otherwise>
 									</xsl:choose>
-									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.<br/><xsl:apply-templates select="description"/>
-									<xsl:if test="tools"><br/><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.</p><!--br/--><p><xsl:apply-templates select="description"/></p>
+									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
@@ -207,7 +207,7 @@
 <xsl:template match="project" >
 							<tr>
 								<th><xsl:apply-templates select="title"/></th>
-								<td><!--xsl:copy-of select="."/--><xsl:apply-templates select="description"/>
+								<td><p><xsl:apply-templates select="description"/></p>
 								<xsl:if test="tools"><br/><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
@@ -222,6 +222,7 @@
 <xsl:template match="sharp">#</xsl:template>
 <xsl:template match="euro">€</xsl:template>
 <xsl:template match="amp">&amp;</xsl:template>
+<xsl:template match="nbsp">&#160;</xsl:template>
 
 <xsl:template match="link">
 <a style="white-space:nowrap;"><xsl:attribute name="href"><xsl:apply-templates select="@href"/></xsl:attribute><xsl:apply-templates/></a>

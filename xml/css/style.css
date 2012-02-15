@@ -20,7 +20,7 @@ div#conteneur{margin-left: 10px;margin-right:10px; width:940px;}
 #subtitle{padding-top: 20px;padding-bottom: 50px;}
 #content{border-bottom-left-radius:50px;border-bottom-right-radius:50px;}
 #content h2{margin-bottom:0px;}
-table{border-spacing:15px 20px;}
+table{border-spacing:15px 20px;margin-left:-10px;margin-right:-10px;}
 .footer{padding-bottom:20px;}
 
 /*colors*/

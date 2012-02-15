@@ -13,7 +13,7 @@ ul{list-style:none;padding-left:0%;margin:0;}
 .clear{clear:both;visibility:hidden;display:block;overflow:hidden;width:0;}
 .innerBlock{padding: 10px 10px 0px 10px;}
 .enteteBlock{padding: 0 10px 0px 10px;}
-th{width:115px;vertical-align:top;text-align:left;}
+th{width:130px;vertical-align:top;text-align:left;}
 #entete{margin:0 0 0 0; }
 #enteteLeft{float:left;margin-top:auto;margin-bottom:auto;width:62%;}
 #enteteRight{float:right;margin-top:auto;text-align:right;width:38%;}
@@ -22,7 +22,10 @@ th{width:115px;vertical-align:top;text-align:left;}
 #content h2{padding-bottom:2px;border-width:2px;border-bottom-style:solid;font-weight:normal;}
 #title{padding-left: 50px;padding-right: 50px;}
 #subtitle{padding-left: 50px ;padding-right: 50px;}
-p{margin-bottom:0;padding-bottom:0;}
+/*
+table{margin-left:-10px;}
+*/
+p{margin-top:0;padding-top:0;margin-bottom:0;padding-bottom:0;}
 
 /*div*/
 .single{clear:both;padding-left:5%;padding-right:5%;}
@@ -41,6 +44,8 @@ ul{font-family:Arial,Helvetica,sans-serif;}
 h1{font-family:Arial,Helvetica,sans-serif;}
 h2{font-family:Arial,Helvetica,sans-serif;}
 h3{font-family:Arial,Helvetica,sans-serif;}
+table{line-height:1.3;}
+table,.footer{font-size:0.9em;}
 p,table{font-family:Calibri,sans-serif;text-align:justify;}
 #entete h2,#entete h3{font-style:italic;padding-top:3px;}
 #entete h2{font-size:1.3em;}

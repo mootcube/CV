@@ -5,7 +5,7 @@
 <xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
 <xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
 <xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
-<xsl:variable name="space">-1.0em</xsl:variable>
+<xsl:variable name="space">-0.5em</xsl:variable>
 
 <xsl:template match="cv"  >
 <!-- <xsl:value-of select=""/> -->
@@ -24,6 +24,12 @@
 %\topmargin 5cm
 
 \usepackage[pdftex]{hyperref}
+<xsl:choose>
+	<xsl:when test="lang = 'fr'">\usepackage[francais]{babel}%
+</xsl:when>
+	<xsl:otherwise></xsl:otherwise>
+</xsl:choose>
+
 %\usepackage[francais]{babel}
 \usepackage[none]{hyphenat}
 \usepackage{eurosym}
@@ -77,7 +83,6 @@
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
-
 \pagestyle{fancy}
 
 
@@ -114,7 +119,7 @@
 
 <xsl:apply-templates select="projects/project"/>
 
-
+<!--
 %\renewcommand{\listitemsymbol}{-} % change the symbol for lists
 
 %\section{Extra 2}
@@ -135,6 +140,7 @@
 %\nocitemisc{misc1,misc2,misc3}
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
+-->
 
 \end{document}
 
@@ -162,7 +168,7 @@
 <xsl:apply-templates select="tools"/>.</xsl:if>\vspace{0.9em}}%
 </xsl:template>
 
-<xsl:template match="interest" >\cvline{<xsl:apply-templates select="field"/>}{<xsl:apply-templates select="description"/>}%
+<xsl:template match="interest" >\cvline{<xsl:apply-templates select="field"/>}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/>}\end{minipage}}%
 </xsl:template>
 
 <xsl:template match="language" >\cvlanguage{<xsl:apply-templates select="name"/>}{<xsl:apply-templates select="level"/>}{<xsl:if test="description"><xsl:apply-templates select="description"/>.</xsl:if>\hfill}%
@@ -180,6 +186,8 @@
 <xsl:template match="euro">\euro{}</xsl:template>
 
 <xsl:template match="amp">\&amp;</xsl:template>
+
+<xsl:template match="nbsp">~</xsl:template>
 
 <xsl:template match="link">\href{<xsl:value-of select="@href"/>}{<xsl:apply-templates/>}</xsl:template>
 
