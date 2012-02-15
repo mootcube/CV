@@ -26,7 +26,7 @@
 % character encoding
 \usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 % adjust the page margins
-\usepackage[scale=0.83]{geometry}%
+\usepackage[scale=0.8]{geometry}%
 
 \pdfminorversion=7%
 \pdfobjcompresslevel=3%
@@ -42,7 +42,7 @@
 -->
 
 \setlength{\hintscolumnwidth}{2.5cm}						%3 if you want to change the width of the column with the dates
-%\AtBeginDocument{\setlength{\maketitlenamewidth}{10cm}}  %12cm only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{12cm}}  %12cm only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 \AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
 
 % personal data
@@ -73,6 +73,10 @@
 %            content
 %----------------------------------------------------------------------------------
 \pagestyle{fancy}%
+
+
+\renewcommand*{\namefont}{\fontsize{34}{34}\sffamily\mdseries\upshape}%
+%\renewcommand*{\namefont}{\fontsize{34}{36}\sffamily\mdseries\upshape}%
 
 \begin{document}%
 \maketitle%
@@ -114,23 +118,23 @@
 </xsl:template>
 
 <xsl:template match="section">
-\section{<xsl:apply-templates select="@title"/>}%<xsl:apply-templates/>\vspace{<xsl:copy-of select="$space"/>}%
+\section{<xsl:apply-templates select="@title"/>}%<xsl:apply-templates/>%\vspace{<xsl:copy-of select="$space"/>}%
 </xsl:template>
 
-<xsl:template match="formation">\cventry{<xsl:apply-templates select="year"/>}{<xsl:apply-templates select="title"/>}{\newline{}\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if>}}{<xsl:apply-templates select="location"/>}{}{}  % arguments 3 to 6 can be left empty</xsl:template>
+<xsl:template match="formation">\cventry{<xsl:apply-templates select="year"/>}{<xsl:apply-templates select="title"/>}{\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if>}}{<xsl:apply-templates select="location"/>}{<xsl:apply-templates select="field"/>}{<xsl:if test="misc"><xsl:apply-templates select="misc"/>.</xsl:if>}  % arguments 3 to 6 can be left empty</xsl:template>
 
 <xsl:template match="competence">\cvline{<xsl:apply-templates select="field"/>}{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</xsl:if>}<!--\cventry{<xsl:value-of select="field"/>}{<xsl:apply-templates select="description"/>}{}{}{}{<xsl:if test="tools">\techUsed <xsl:value-of select="tools"/>.</xsl:if>}  % arguments 3 to 6 can be left empty
 %\cvcomputer
 %{<xsl:value-of select="field"/>}{<xsl:apply-templates/>}{}{}-->%</xsl:template>
 
 <xsl:template match="experience">\cventry{<xsl:apply-templates select="year"/>} {<xsl:apply-templates select="title"/>} {\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="entreprise"/>}} {<xsl:apply-templates select="location"/>} {} {<xsl:copy-of select="$obj"/> <xsl:apply-templates select="description"/> <xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> %Utilisation de 
-<xsl:apply-templates select="tools"/>.</xsl:if>\vspace{0.9em}}%</xsl:template>
+<xsl:apply-templates select="tools"/>.</xsl:if>}%\vspace{0.9em}}%</xsl:template>
 
 <xsl:template match="interest" >\cvline{<xsl:apply-templates select="field"/>}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/>}\end{minipage}}%</xsl:template>
 
 <xsl:template match="language" >\cvlanguage{<xsl:apply-templates select="name"/>}{<xsl:apply-templates select="level"/>}{<xsl:if test="description"><xsl:apply-templates select="description"/>.</xsl:if>\hfill}%</xsl:template>
 
-<xsl:template match="project" >\cvline{<xsl:apply-templates select="title"/>}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</xsl:if>}\end{minipage}\vspace{0.3em}}%</xsl:template>
+<xsl:template match="project" >\cvline{<xsl:apply-templates select="title"/>}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</xsl:if>}\end{minipage}}%\vspace{0.3em}}%</xsl:template>
 
 <xsl:template match="strong">\textbf{<xsl:apply-templates/>}</xsl:template>
 

@@ -16,8 +16,8 @@
 <obj><strong>Objectifs : </strong></obj>
 
 <profile>
-<name>Mathieu</name><surname>CHATAIGNER</surname>
-<title>Ingénieur INSA</title>
+<name>Mathieu</name><surname>Chataigner</surname>
+<title>Ingénieur développeur</title>
 <field>Architecture des Systèmes d'Information</field>
 <address><street>1 rue de la garenne</street><cp>80480 Salouel</cp></address>
 <phone>06 84 85 83 22</phone>
@@ -31,27 +31,31 @@
 <school>Université de Cranfield</school>
 <web>http://www.cranfield.ac.uk/</web>
 <location>Angleterre</location>
-<title>Ingénieur en Mathématiques Appliquée et Informatique</title>
+<title>Maîtrise ès Sciences</title>
+<field>Mathématiques Appliquée et Informatique</field>
+<misc>Thèse de master en Cloud Computing</misc>
 </formation>
 <formation>
 <year>2006 - 2011</year>
 <school>INSA de Rouen<schoollong>Institut National des Sciences Appliquées</schoollong></school>
 <web>http://asi.insa-rouen.fr/</web>
 <location>Seine-Maritime (76)</location>
-<title>Ingénieur en Architecture des Systèmes d’Information</title>
+<title>Ingénieur</title>
+<field>Architecture des Systèmes d’Information</field>
 </formation>
 <formation>
 <year>2006</year>
 <school>Lycée Jean-Baptiste de la Salle</school>
 <web>http://www.jbsrouen.org/site/index.php</web>
 <location>Rouen, Normandie</location>
-<title>Baccalauréat S spé. SVT option Physique-Chimie avec mention</title>
+<title>Baccalauréat S</title>
+<field>spé. SVT option Physique-Chimie avec mention</field>
 </formation>
 </section>
 <section title="Compétences">
 <competence>
-<field>Informatique</field>
-<description>Analyse logicielle et système, rédaction de spécifications, conception orientée objet, modélisation relationnelle, intégration, reprise de l'existant.</description>
+<field>Logiciel</field>
+<description>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</description>
 <tools><strong>Java/JEE, Python, UML, SQL</strong>, C<sharp/></tools>
 </competence>
 <competence>

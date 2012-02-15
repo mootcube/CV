@@ -5,6 +5,8 @@
 <xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
 <xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
 <xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
+<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'" />
+<xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 
 <xsl:template match="cv"  >
 
@@ -61,7 +63,7 @@
 				<div id="entete" class="block left right bgcolored">
 					<div class="enteteBlock">
 						<div id="enteteLeft" class="entete left">
-							<h1><xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:apply-templates select="profile/surname"/></h1>
+							<h1><xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:value-of select="translate(profile/surname, $smallcase, $uppercase)"/></h1>
 							<h2><xsl:apply-templates select="profile/title"/></h2>
 							<h3><xsl:apply-templates select="profile/field"/></h3>
 						</div>
@@ -86,39 +88,7 @@
 				</div>
 				<div class="clear"></div>
 				<div id="content" class="block left right">
-<xsl:apply-templates select="section"/>
-<!--					<div class="innerBlock">
-						<h2><a name="formation"></a><xsl:apply-templates select="formations/title"/></h2>
-						<table>
-<xsl:apply-templates select="formations/formation"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="competences"></a><xsl:apply-templates select="competences/title"/></h2>
-						<table>
-<xsl:apply-templates select="competences/competence"/>
-<xsl:apply-templates select="languages/language"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="experiences"></a><xsl:apply-templates select="experiences/title"/></h2>
-						<table>
-<xsl:apply-templates select="experiences/experience"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="loisirs"></a><xsl:apply-templates select="interests/title"/></h2>
-						<table>
-<xsl:apply-templates select="interests/interest"/>
-						</table>
-					</div>
-					<div class="innerBlock">
-						<h2><a name="projets"></a><xsl:apply-templates select="projects/title"/></h2>
-						<table>
-<xsl:apply-templates select="projects/project"/>
-						</table>
-					</div>
--->
+					<xsl:apply-templates select="section"/>
 					<div class="clear"></div>
 					<div class="footer innerBlock">
 						Mis à jour le <xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/><br/>Mon site internet pour la dernière version : <a><xsl:attribute name="href"><xsl:apply-templates select="update/@site"/></xsl:attribute><xsl:apply-templates select="update/@site"/></a>
@@ -151,22 +121,37 @@
 
 <xsl:template match="formation">
 							<tr>
-								<th><xsl:apply-templates select="year"/></th><td><p><xsl:apply-templates select="title"/>,</p><p> <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.</p></td>
+								<th><xsl:apply-templates select="year"/></th>
+								<td>
+									<p>
+										<xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
+									</p>
+									<p>
+										<xsl:apply-templates select="field"/>.
+									</p>
+									<xsl:if test="misc"><p>
+										<xsl:apply-templates select="misc"/>.
+									</p></xsl:if>
+								</td>
 							</tr>
 </xsl:template>
 
 <xsl:template match="competence">
 							<tr>
-								<th><xsl:apply-templates select="field"/></th><td><p><xsl:apply-templates select="description"/></p>
-								<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<th><xsl:apply-templates select="field"/></th>
+								<td>
+									<p><xsl:apply-templates select="description"/></p>
+									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
 </xsl:template>
 
 <xsl:template match="language">
 							<tr>
-								<th><xsl:apply-templates select="name"/></th><td><p><xsl:apply-templates select="level"/>
-								<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
+								<th><xsl:apply-templates select="name"/></th>
+								<td>
+									<p><xsl:apply-templates select="level"/>
+									<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
 								</td>
 							</tr>
 </xsl:template>
@@ -174,7 +159,8 @@
 
 <xsl:template match="experience">
 							<tr>
-								<th><xsl:apply-templates select="year"/></th><td>
+								<th><xsl:apply-templates select="year"/></th>
+								<td>
 									<p><span class="subject">
 									<xsl:choose>
 									<xsl:when test="titleweb">
@@ -219,14 +205,12 @@
 					<div class="innerBlock">
 						<h2><a name="projets"></a><xsl:apply-templates select="@title"/></h2>
 						<table>
-<xsl:apply-templates/>
+							<xsl:apply-templates/>
 						</table>
 					</div>
 </xsl:template>
 
-<xsl:template match="strong">
-<span class="subject"><xsl:apply-templates/></span>
-</xsl:template>
+<xsl:template match="strong"><span class="subject"><xsl:apply-templates/></span></xsl:template>
 
 <xsl:template match="newline"><br/></xsl:template>
 
@@ -235,12 +219,8 @@
 <xsl:template match="amp">&amp;</xsl:template>
 <xsl:template match="nbsp">&#160;</xsl:template>
 
-<xsl:template match="link">
-<a style="white-space:nowrap;"><xsl:attribute name="href"><xsl:apply-templates select="@href"/></xsl:attribute><xsl:apply-templates/></a>
-</xsl:template>
+<xsl:template match="link"><a style="white-space:nowrap;"><xsl:attribute name="href"><xsl:apply-templates select="@href"/></xsl:attribute><xsl:apply-templates/></a></xsl:template>
 
-<xsl:template match="*/text()">
-<xsl:value-of select="."/>
-</xsl:template>
+<xsl:template match="*/text()"><xsl:value-of select="."/></xsl:template>
 
 </xsl:stylesheet>
