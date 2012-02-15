@@ -13,7 +13,7 @@ ul{list-style:none;padding-left:0%;margin:0;}
 .clear{clear:both;visibility:hidden;display:block;overflow:hidden;width:0;}
 .innerBlock{padding: 10px 10px 0px 10px;}
 .enteteBlock{padding: 0 10px 0px 10px;}
-th{width:130px;vertical-align:top;text-align:left;}
+th{width:135px;vertical-align:top;text-align:left;}
 #entete{margin:0 0 0 0; }
 #enteteLeft{float:left;margin-top:auto;margin-bottom:auto;width:62%;}
 #enteteRight{float:right;margin-top:auto;text-align:right;width:38%;}

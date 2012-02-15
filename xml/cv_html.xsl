@@ -86,7 +86,8 @@
 				</div>
 				<div class="clear"></div>
 				<div id="content" class="block left right">
-					<div class="innerBlock">
+<xsl:apply-templates select="section"/>
+<!--					<div class="innerBlock">
 						<h2><a name="formation"></a><xsl:apply-templates select="formations/title"/></h2>
 						<table>
 <xsl:apply-templates select="formations/formation"/>
@@ -117,6 +118,7 @@
 <xsl:apply-templates select="projects/project"/>
 						</table>
 					</div>
+-->
 					<div class="clear"></div>
 					<div class="footer innerBlock">
 						Mis à jour le <xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/><br/>Mon site internet pour la dernière version : <a><xsl:attribute name="href"><xsl:apply-templates select="update/@site"/></xsl:attribute><xsl:apply-templates select="update/@site"/></a>
@@ -208,9 +210,18 @@
 							<tr>
 								<th><xsl:apply-templates select="title"/></th>
 								<td><p><xsl:apply-templates select="description"/></p>
-								<xsl:if test="tools"><br/><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</td>
 							</tr>
+</xsl:template>
+
+<xsl:template match="section">
+					<div class="innerBlock">
+						<h2><a name="projets"></a><xsl:apply-templates select="@title"/></h2>
+						<table>
+<xsl:apply-templates/>
+						</table>
+					</div>
 </xsl:template>
 
 <xsl:template match="strong">
