@@ -5,6 +5,7 @@
 <xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
 <xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
 <xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
+<xsl:variable name="space">-1.0em</xsl:variable>
 
 <xsl:template match="cv"  >
 <!-- <xsl:value-of select=""/> -->
@@ -88,22 +89,27 @@
 \section{<xsl:apply-templates select="formations/title"/>}
 <xsl:apply-templates select="formations/formation"/>
 
+\vspace{<xsl:copy-of select="$space"/>}
 \section{<xsl:apply-templates select="competences/title"/>}% informatiques}
 
 <xsl:apply-templates select="competences/competence"/>
 
+\vspace{<xsl:copy-of select="$space"/>}
 \section{<xsl:apply-templates select="languages/title"/>}
 
 <xsl:apply-templates select="languages/language"/>
 
+\vspace{<xsl:copy-of select="$space"/>}
 \section{<xsl:apply-templates select="experiences/title"/>}
 
 <xsl:apply-templates select="experiences/experience"/>
 
+\vspace{<xsl:copy-of select="$space"/>}
 \section{<xsl:apply-templates select="interests/title"/>}
 
 <xsl:apply-templates select="interests/interest"/>
 
+\vspace{<xsl:copy-of select="$space"/>}
 \section{<xsl:apply-templates select="projects/title"/>}
 
 <xsl:apply-templates select="projects/project"/>
@@ -153,7 +159,7 @@
 %{<xsl:value-of select="field"/>}{<xsl:apply-templates/>}{}{}--></xsl:template>
 
 <xsl:template match="experience">\cventry{<xsl:apply-templates select="year"/>} {<xsl:apply-templates select="title"/>} {\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="entreprise"/>}} {<xsl:apply-templates select="location"/>} {} {<xsl:copy-of select="$obj"/> <xsl:apply-templates select="description"/> <xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> %Utilisation de 
-<xsl:apply-templates select="tools"/>.</xsl:if>\vspace{1.1em}}%
+<xsl:apply-templates select="tools"/>.</xsl:if>\vspace{0.9em}}%
 </xsl:template>
 
 <xsl:template match="interest" >\cvline{<xsl:apply-templates select="field"/>}{<xsl:apply-templates select="description"/>}%
@@ -162,7 +168,7 @@
 <xsl:template match="language" >\cvlanguage{<xsl:apply-templates select="name"/>}{<xsl:apply-templates select="level"/>}{<xsl:if test="description"><xsl:apply-templates select="description"/>.</xsl:if>\hfill}%
 </xsl:template>
 
-<xsl:template match="project" >\cvline{\textbf{<xsl:apply-templates select="title"/>}}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</xsl:if>}\end{minipage}\vspace{0.5em}}%
+<xsl:template match="project" >\cvline{\textbf{<xsl:apply-templates select="title"/>}}{\begin{minipage}[t]{\linewidth}\small{<xsl:apply-templates select="description"/><xsl:if test="tools">\newline{}<xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</xsl:if>}\end{minipage}\vspace{0.3em}}%
 </xsl:template>
 
 <xsl:template match="strong">\textbf{<xsl:apply-templates/>}</xsl:template>
