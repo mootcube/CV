@@ -1,4 +1,4 @@
-all: clean_pdf CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
+all: clean_pdf cv CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 	make clean
 
 %.pdf:	%.tex
@@ -14,8 +14,10 @@ all: clean_pdf CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 	@echo "$@ generated"
 
 cv:
-	pdflatex CV-Mathieu-Chataigner.tex
-	pdflatex CV-Mathieu-Chataigner.tex
+	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
+	pdflatex cv.tex > /dev/null
+	pdflatex cv.tex > /dev/null
+	@echo "cv.pdf generated"
 
 resume:
 	pdflatex Resume-Mathieu-Chataigner.tex
@@ -25,8 +27,24 @@ clean_pdf:	clean
 	rm -f *.pdf
 
 clean:
-	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi
+	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi cv.tex CV.zip CV.tar.xz CV_latex.tar.xz CV_web.tar.xz CV_latex.tar CV_web.tar
 
 arch:	clean
 	rm -f CV.zip
 	zip -r CV.zip .
+
+tar:	clean
+	rm -f CV.zip
+	rm -f CV.tar.xz
+	tar cvvJf CV.tar.xz *
+	@echo "CV.tar.xz generated"
+
+web:	clean
+	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls moderncvcompatibility.sty moderncvthemecasual.sty moderncvthemeclassic.sty moderncvthemeempty.sty pdftex.cfg tweaklist.sty xml/cv.xml xml/cv_latex.xsl
+	@echo "CV_latex.tar.xz generated"
+	@echo pwd
+	tar cvvf CV_web.tar CV_latex.tar.xz
+	tar rvvCf xml CV_web.tar cv.xml cv_html.xsl css
+	xz CV_web.tar
+	@echo "CV_web.tar.xz generated"
+

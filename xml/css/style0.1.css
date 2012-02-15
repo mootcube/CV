@@ -1,0 +1,73 @@
+/*copyright mathieu CHATAIGNER, please send me a message if you want to use this template*/
+/*default*/
+body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;background:transparent}body{line-height:1;}
+body{background-color:#dce2df;margin:0;}
+
+/*containers*/
+div#outConteneur{width:960px;margin-left:auto;margin-right:auto;}
+div#conteneur{position:relative;margin-left: 10px;margin-right:10px; width:940px;display:inline;float:left;}
+ul{list-style:none;padding-left:0%;margin:0;}
+
+/*utils*/
+.block{background-color:#FFFFFF;left:80px;width:780px;display:inline;position:relative;float:left;}
+.clear{clear:both;visibility:hidden;display:block;overflow:hidden;width:0;}
+.innerBlock{padding: 0px 50px 8px 50px;}
+.enteteBlock{padding: 0px 50px 20px 50px;}
+
+/*div*/
+.single{clear:both;padding-left:5%;padding-right:5%;}
+.center{text-align:center;}
+.left{margin-left:0;}
+.right{margin-right:0;}
+.subject{font-weight:bold;}
+.address{font-style:italic;}
+.footer{text-align:center;padding-bottom:20px;font-family:Calibri,sans-serif;}
+
+/*colors*/
+.colored,#content h2{color:#819FF7;}/*819FF7*/
+.bgcolored{background-color:#819FF7;color:#FFFFFF;}
+
+/*fonts*/
+/*ul{font-family:"Georgia",Georgia,serif;}
+*/
+ul{font-family:Arial,Helvetica,sans-serif;}
+h1{font-family:Arial,Helvetica,sans-serif;}
+/*h1{font-family: Verdana, Arial, Helvetica, sans-serif;}*/
+h2{font-family:Arial,Helvetica,sans-serif;}
+h3{font-family:Arial,Helvetica,sans-serif;}
+/*p{font-family:"Georgia",Georgia,serif;}
+*/p,table{font-family:Calibri,sans-serif;text-align:justify;}
+
+th{width:110px;vertical-align:top;text-align:left;}
+table{border-spacing:15px 20px;}
+
+/*contact links*/
+#contact {display:block;visibility:hidden;float:left;position:absolute;top:0px;left:25px;background-color:#FF0000;width:50px;padding-top:290px;}
+
+/*header*/
+#entete{margin:5px 0 0 0; border-top-left-radius:50px;border-top-right-radius:50px;}
+.entete{padding-top:40px;padding-bottom:5px;}
+#enteteLeft{float:left;margin-top:auto;margin-bottom:auto;width:65%;}
+#enteteRight{float:right;margin-top:auto;text-align:right;width:35%;}
+#entete h1{font-size:2.5em;padding-top:15px;}
+#entete h2,#entete h3{font-style:italic;padding-top:3px;}
+#entete h2{font-size:1.3em;}
+#entete h3{font-size:1.0em;}
+
+/*title  Verdana, Arial, Helvetica, sans-*/
+#title{padding:40px 50px 0px 50px;font-family:Verdana,sans-serif;font-style:normal;font-weight:normal;font-size:2em;font-variant:small-caps;}
+#subtitle{padding:20px 50px 50px 50px;font-size:1.5em;font-weight:normal;font-style:italic;}
+
+/*content*/
+/*h2#content{float:left;margin-left:5%;}*/
+#content{margin:0 0 5px 0;border-bottom-left-radius:50px;border-bottom-right-radius:50px;}
+#content h2{padding-bottom:2px;margin-bottom:0px;border-width:2px;border-bottom-style:solid;font-weight:normal;}
+div#content h3{display:table-cell; width:130px;font-family: Arial, Helvetica, sans-serif; font-size:0.92em; font-weight:bold;}
+#content p{display:table-cell;font-size:1em; padding-bottom:7px; text-align:justify;}
+a{color:#3f82b9; text-decoration:none;}
+a:hover,p a:focus {color:#3f82b9; text-decoration:underline;}
+
+
+/*font-family: Arial, "Arial Black", "Times New Roman", Times, serif; 
+font-size:0.8em; 
+font-weight:bold;}*/

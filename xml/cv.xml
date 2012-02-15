@@ -48,13 +48,6 @@
 			<location>Rouen, Normandie</location>
 			<title>Baccalauréat S spé. SVT option Physique-Chimie avec mention</title>
 		</formation>
-		<!--formation>
-			<year></year>
-			<school></school>
-			<web></web>
-			<location></location>
-			<title></title>
-		</formation-->
 	</formations>
 	<competences>
 		<title>Compétences</title>
@@ -78,10 +71,6 @@
 			<description>Administration système.</description>
 			<tools><strong>GNU/Linux, Bash, Python</strong></tools>
 		</competence>
-		<!--competence>
-			<field>Anglais</field>
-			<description>Professionnel (score TOEIC: <strong>880/990</strong>, déc. 2010).</description>
-		</competence-->
 	</competences>
 	<languages>
 		<title>Langues</title>
