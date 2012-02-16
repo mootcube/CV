@@ -21,6 +21,7 @@ cv:
 	pdflatex cv.tex 
 	pdflatex cv.tex > /dev/null
 	@echo "cv.pdf generated"
+	cp cv.pdf CV-Mathieu-Chataigner.pdf
 
 resume:
 	pdflatex Resume-Mathieu-Chataigner.tex

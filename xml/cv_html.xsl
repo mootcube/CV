@@ -234,9 +234,7 @@
 <xsl:template match="section">
 					<div class="innerBlock">
 						<h2><a name="projets"></a><xsl:apply-templates select="@title"/></h2>
-						<!--table-->
 							<xsl:apply-templates/>
-						<!--/table-->
 					</div>
 </xsl:template>
 

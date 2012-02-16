@@ -34,9 +34,6 @@
 \pdfminorversion=7%
 \pdfobjcompresslevel=3%
 
-\hypersetup{%
-  pdftitle={<xsl:apply-templates select="profile/name"/>~<xsl:apply-templates select="profile/surname"/> -- <xsl:apply-templates select="title"/>},%
-}%
 
 % moderncv themes
 \moderncvtheme{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)<!--
@@ -87,8 +84,10 @@
 %\renewcommand*{\namefont}{\fontsize{34}{36}\sffamily\mdseries\upshape}%
 
 \begin{document}%
-%\fancypagestyle{plain}{%
-\fancyfoot[c]{\color{color2}\addressfont\upshape Mis~à~jour~le~pouet Mon~site~pour~la~dernière~version~:~<xsl:apply-templates select="update/@site"/>}%}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+\hypersetup{%
+  pdftitle={<xsl:apply-templates select="profile/name"/>~<xsl:apply-templates select="profile/surname"/> -- <xsl:apply-templates select="title"/>},%
+}%
+\fancyfoot[c]{\parbox{0.8\textwidth}{\center\color{color2}\addressfont\fontsize{7}{9}\upshape Mis~à~jour~le~<xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/>\\ Mon~site~pour~la~dernière~version~:~\href{<xsl:apply-templates select="update/@site"/>}{<xsl:apply-templates select="update/@site"/>}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
 \maketitle%
 %\vspace{-1.5em}%
 <xsl:apply-templates select="section"/>
