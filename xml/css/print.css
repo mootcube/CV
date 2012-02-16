@@ -22,7 +22,8 @@ tr{page-break-inside:avoid;margin-bottom:10px;}
 .subject{font-weight:bold;}
 .address{font-style:italic;}
 .footer{padding-bottom:0px;}
-
+.head:after{content:" : "}
+.head{float:left;}
 /*colors*/
 .bgcolored{color:#819FF7;}
 #entete.bgcolored{color:#000000;}

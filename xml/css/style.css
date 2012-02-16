@@ -24,6 +24,8 @@ table{border-spacing:0px 0px;margin-left:0px;margin-right:0px;}
 .footer{padding-bottom:20px;}
 p{margin-bottom:5px;}
 
+.head{float:left;width:15%;}
+.data{float:right;width:85%;}
 /*colors*/
 .bgcolored{background-color:#819FF7;color:#FFFFFF;}
 a{color:#3f82b9;}
