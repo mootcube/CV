@@ -24,8 +24,9 @@ tr{page-break-inside:avoid;margin-bottom:10px;}
 .footer{padding-bottom:0px;}
 .head:after{content:" : "}
 .head{float:left;}
+
 /*colors*/
-.bgcolored{color:#819FF7;}
+/*.bgcolored{color:#819FF7;}*/
 #entete.bgcolored{color:#000000;}
 #entete h2,#entete h3,#entete ul{color:#666666;}
 a{color:#000000; }

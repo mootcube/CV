@@ -13,14 +13,14 @@
 <lang>fr</lang>
 <techUsed>Technologies : </techUsed>
 <tools>Outils : </tools>
-<obj><strong>Objectifs : </strong></obj>
-
+<obj></obj>
+<color>3F82B9</color>
 <profile>
 <name>Mathieu</name><surname>Chataigner</surname>
-<title>Ingénieur développeur</title>
+<title>Ingénieur Informatique</title>
 <field>Architecture des Systèmes d'Information</field>
 <address><street>1 rue de la garenne</street><cp>80480 Salouel</cp></address>
-<phone>06 84 85 83 22</phone>
+<phone>+33 6 84 85 83 22</phone>
 <mail>mathieu.chataigner@gmail.com</mail>
 <age>23 ans</age>
 <drive>Permis B</drive>
@@ -31,9 +31,9 @@
 <school>Université de Cranfield</school>
 <web>http://www.cranfield.ac.uk/</web>
 <location>Angleterre</location>
-<title>Maîtrise ès Sciences</title>
+<title>Master ès Sciences</title>
 <field>Mathématiques Appliquée et Informatique</field>
-<misc>Thèse de master en Cloud Computing</misc>
+<misc>Thèse de Master en Cloud Computing</misc>
 </formation>
 <formation>
 <year>2006 - 2011</year>
@@ -92,7 +92,7 @@
 <entreprise>Invivoo (Néomantis)</entreprise>
 <web>http://invivoo.com/invivoo</web>
 <location>Courbevoie (92)</location>
-<tools>F<sharp/>, C<sharp/>, .net Framework</tools>
+<tools>F<sharp/>, C<sharp/>, .Net Framework</tools>
 <description>Assistance au développement d'un progiciel d'automate de trading en interne au sein d’ Invivoo. Réalisation d'un module de monitoring du système, de l'application et des automates. Le développement est réalisé  en langage fonctionnel F<sharp/> pour des raisons de performance et de facilité  de codage et de maintenabilité. </description>
 </experience>
 <experience>

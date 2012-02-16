@@ -14,8 +14,11 @@ all: clean_pdf cv CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 	@echo "$@ generated"
 
 cv:
+	xsltproc xml/cv_latex_qr.xsl xml/cv.xml > qr.tex
 	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
-	pdflatex cv.tex > /dev/null
+	pdflatex -shell-escape qr.tex
+	pdflatex -shell-escape qr.tex
+	pdflatex cv.tex 
 	pdflatex cv.tex > /dev/null
 	@echo "cv.pdf generated"
 
@@ -27,7 +30,7 @@ clean_pdf:	clean
 	rm -f *.pdf
 
 clean:
-	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi cv.tex CV.zip CV.tar.xz CV_latex.tar.xz CV_web.tar.xz CV_latex.tar CV_web.tar
+	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi cv.tex qr.tex CV.zip CV.tar.xz CV_latex.tar.xz CV_web.tar.xz CV_latex.tar CV_web.tar
 
 arch:	clean
 	rm -f CV.zip

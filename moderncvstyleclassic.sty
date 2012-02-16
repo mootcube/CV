@@ -98,7 +98,7 @@
       \ifthenelse{\isundefined{\@email}}{}{\maketitledetailsnewline\emailsymbol\emaillink{\@email}}%
       \ifthenelse{\isundefined{\@homepage}}{}{\maketitledetailsnewline\homepagesymbol\httplink{\@homepage}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\maketitledetailsnewline\@extrainfo}%
-    \end{tabular}
+    \end{tabular}%
   }%
   % optional picture box
   \newbox{\maketitlepicturebox}%
@@ -120,17 +120,17 @@
     {}%
   \begin{minipage}[b]{\maketitlenamewidth}%
     \namestyle{\@firstname\ \@familyname}%
-    \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\titlestyle{\@title}}%
+    \ifthenelse{\equal{\@title}{}}{}{\\[0.50em]\titlestyle{\@title}\\[1.1em]}%
   \end{minipage}%
   \hfill%
   % detailed information
   \llap{\usebox{\maketitledetailsbox}}% \llap is used to suppress the width of the box, allowing overlap if the value of maketitlenamewidth is forced
   % optional photo
-  \usebox{\maketitlepicturebox}\\[2.5em]%
+  \usebox{\maketitlepicturebox}%
   % optional quote
   \ifthenelse{\isundefined{\@quote}}%
-    {}%
-    {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+    {\\}%
+    {{\\[1.5em]\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[1.5em]}}%
   \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle
 
 \newlength{\baseletterheight}

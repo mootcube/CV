@@ -14,7 +14,7 @@
 	<xsl:attribute name="xml:lang"><xsl:apply-templates select="lang"/></xsl:attribute>
 	<xsl:attribute name="lang"><xsl:apply-templates select="lang"/></xsl:attribute>
 	<head>
-		<title><xsl:apply-templates select="title"/> - <xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:apply-templates select="profile/surname"/></title>
+		<title><xsl:apply-templates select="title"/> - <xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:value-of select="translate(profile/surname, $smallcase, $uppercase)"/></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ><xsl:attribute name="xml:lang"><xsl:apply-templates select="lang"/></xsl:attribute><xsl:attribute name="lang"><xsl:apply-templates select="lang"/></xsl:attribute></meta>
 		<meta http-equiv="Content-Language" ><xsl:attribute name="content"><xsl:apply-templates select="lang"/></xsl:attribute></meta>
 		<meta name="robots" content="All" />
@@ -34,6 +34,17 @@
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
+		<style media="all">
+			.colored,#content h2,.head{color:#<xsl:apply-templates select="color"/>;}
+		</style>
+		<style media="print">
+			.bgcolored{color:#<xsl:apply-templates select="color"/><!--819FF7-->;}
+		</style>
+		<style media="screen">
+			.bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
+			a{color:#<xsl:apply-templates select="color"/>;}
+			a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }
+		</style>
 	</head>
 	<body>
 		<!--[if lte IE 6]>

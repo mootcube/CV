@@ -42,7 +42,7 @@ p{margin-top:0;padding-top:0;margin-bottom:0;padding-bottom:0;}
 
 
 /*colors*/
-.colored,#content h2,.head{color:#819FF7;}
+/*.colored,#content h2,.head{color:#3F82B9;} / *#819FF7;}*/
 
 /*fonts*/
 ul{font-family:Arial,Helvetica,sans-serif;}
@@ -62,7 +62,7 @@ a{text-decoration:none;}
 a:hover,a:focus {text-decoration:underline;}
 
 /*other*/
-#contact {display:block;visibility:hidden;float:left;position:absolute;top:0px;left:25px;background-color:#FF0000;width:50px;padding-top:290px;}
+#contact {display:none;visibility:hidden;float:left;position:absolute;top:0px;left:25px;background-color:#FF0000;width:50px;padding-top:290px;}
 
 
 @page {  
