@@ -22,6 +22,7 @@ div#conteneur{margin-left: 10px;margin-right:10px; width:940px;}
 #content h2{margin-bottom:0px;}
 table{border-spacing:0px 0px;margin-left:0px;margin-right:0px;}
 .footer{padding-bottom:20px;}
+p{margin-bottom:5px;}
 
 /*colors*/
 .bgcolored{background-color:#819FF7;color:#FFFFFF;}

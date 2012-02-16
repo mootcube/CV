@@ -22,9 +22,9 @@ th{width:135px;vertical-align:top;text-align:left;}
 #content h2{padding-bottom:2px;border-width:2px;border-bottom-style:solid;font-weight:normal;}
 #title{padding-left: 50px;padding-right: 50px;}
 #subtitle{padding-left: 50px ;padding-right: 50px;}
-/*
-table{margin-left:-10px;}
-*/
+
+table{margin-top:10px;}
+
 p{margin-top:0;padding-top:0;margin-bottom:0;padding-bottom:0;}
 
 /*div*/
