@@ -133,7 +133,7 @@
 <xsl:template match="formation">
 							<div>
 								<div class="head"><xsl:apply-templates select="year"/></div>
-								<div class="data"><p>
+								<div class="data">
 									<p>
 										<xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
 									</p>
@@ -143,7 +143,7 @@
 									<xsl:if test="misc"><p>
 										<xsl:apply-templates select="misc"/>.
 									</p></xsl:if>
-								</p></div>
+								</div>
 								<div class="clear"></div>
 							</div>
 </xsl:template>
@@ -151,10 +151,10 @@
 <xsl:template match="competence">
 							<div>
 								<div class="head"><xsl:apply-templates select="field"/></div>
-								<div class="data"><p>
+								<div class="data">
 									<p><xsl:apply-templates select="description"/></p>
 									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
-								</p></div>
+								</div>
 								<div class="clear"></div>
 							</div>
 </xsl:template>
@@ -162,10 +162,10 @@
 <xsl:template match="language">
 							<div>
 								<div class="head"><xsl:apply-templates select="name"/></div>
-								<div class="data"><p>
+								<div class="data">
 									<p><xsl:apply-templates select="level"/>
 									<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
-								</p></div>
+								</div>
 								<div class="clear"></div>
 							</div>
 							<!--tr>
@@ -181,7 +181,7 @@
 <xsl:template match="experience">
 							<div>
 								<div class="head"><xsl:apply-templates select="year"/></div>
-								<div class="data"><p>
+								<div class="data">
 									<p><span class="subject">
 									<xsl:choose>
 									<xsl:when test="titleweb">
@@ -198,7 +198,7 @@
 									</xsl:choose>
 									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.</p><!--br/--><p><xsl:apply-templates select="description"/></p>
 									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
-								</p></div>
+								</div>
 								<div class="clear"></div>
 							</div>
 </xsl:template>
@@ -218,9 +218,9 @@
 <xsl:template match="project" >
 							<div>
 								<div class="head"><xsl:apply-templates select="title"/></div>
-								<div class="data"><p><p><xsl:apply-templates select="description"/></p>
+								<div class="data"><p><xsl:apply-templates select="description"/></p>
 								<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
-								</p></div>
+								</div>
 								<div class="clear"></div>
 							</div>
 </xsl:template>
