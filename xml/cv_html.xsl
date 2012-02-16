@@ -29,18 +29,24 @@
 		<meta name="expires" content="never" />
 		<meta name="Date-Creation-yyyymmdd"  ><xsl:attribute name="content"><xsl:apply-templates select="creationDate/y"/>/<xsl:apply-templates select="creationDate/m"/>/<xsl:apply-templates select="creationDate/d"/></xsl:attribute></meta>
 		<meta name="Date-Revision-yyyymmdd"  ><xsl:attribute name="content"><xsl:apply-templates select="modificationDate/y"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/d"/></xsl:attribute></meta>
-		<!--meta name="viewport" content="width=device-width"/-->
+		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1024px)" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
+		<link rel="stylesheet" type="text/css" media="(min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/>
 		<style media="all">
 			.colored,#content h2,.head{color:#<xsl:apply-templates select="color"/>;}
 		</style>
 		<style media="print">
 			.bgcolored{color:#<xsl:apply-templates select="color"/><!--819FF7-->;}
 		</style>
-		<style media="screen">
+		<style media="screen and (min-device-width: 1024px)">
+			.bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
+			a{color:#<xsl:apply-templates select="color"/>;}
+			a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }
+		</style>
+		<style media="(min-device-width: 320px) and (max-device-width: 1023px)">
 			.bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
 			a{color:#<xsl:apply-templates select="color"/>;}
 			a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }

@@ -101,7 +101,7 @@
 <entreprise>Cranfield University</entreprise>
 <web>http://www.cranfield.ac.uk/</web>
 <location>Angleterre</location>
-<tools><strong>Cloud Computing, MapReduce</strong>, Microsoft Windows Azure, C\#, .net Framework</tools>
+<tools><strong>Cloud Computing, MapReduce</strong>, Microsoft Windows Azure, C<sharp/>, .net Framework</tools>
 <description>Spécification, conception, développement et tests d'une application visant à effectuer des opération de regroupement d'informations dans un environnement de Cloud Computing. Application du Design Pattern MapReduce dans le but d'aggréger les différentes simulations concernants les pertes et profits de produits boursiers.</description>
 </experience>
 <experience>
