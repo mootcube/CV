@@ -33,26 +33,22 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
-		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1024px)" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/>
+		<link id="style" rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<!--link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/-->
 		<style media="all">
 			.colored,#content h2,.head{color:#<xsl:apply-templates select="color"/>;}
 		</style>
 		<style media="print">
 			.bgcolored{color:#<xsl:apply-templates select="color"/><!--819FF7-->;}
 		</style>
-		<style media="screen and (min-device-width: 1024px)">
-			.bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
-			a{color:#<xsl:apply-templates select="color"/>;}
-			a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }
-		</style>
-		<style media="(min-device-width: 320px) and (max-device-width: 1023px)">
+		<style media="screen">
 			.bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
 			a{color:#<xsl:apply-templates select="color"/>;}
 			a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }
 		</style>
 	</head>
 	<body>
+		<script type="text/javascript" src="script.js"/>
 		<!--[if lte IE 6]>
 		<style type="text/css">
 		body{text-align:center;}

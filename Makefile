@@ -43,10 +43,10 @@ tar:	clean
 	tar cvvJf CV.tar.xz *
 	@echo "CV.tar.xz generated"
 
-web:	clean
+web:	cv clean
 	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls pdftex.cfg *.sty xml/cv.xml xml/cv_latex.xsl
 	@echo "CV_latex.tar.xz generated"
-	tar cvvf CV_web.tar CV_latex.tar.xz
+	tar cvvf CV_web.tar CV_latex.tar.xz CV-Mathieu-Chataigner.pdf
 	tar rvvCf xml CV_web.tar cv.xml cv_html.xsl index.php css
 	xz CV_web.tar
 	@echo "CV_web.tar.xz generated"
