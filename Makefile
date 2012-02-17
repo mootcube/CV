@@ -16,9 +16,9 @@ all: clean_pdf cv CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 cv:
 	xsltproc xml/cv_latex_qr.xsl xml/cv.xml > qr.tex
 	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
-	pdflatex -shell-escape qr.tex
-	pdflatex -shell-escape qr.tex
-	pdflatex cv.tex 
+	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
+	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
+	pdflatex cv.tex > /dev/null
 	pdflatex cv.tex > /dev/null
 	@echo "cv.pdf generated"
 	cp cv.pdf CV-Mathieu-Chataigner.pdf
@@ -32,6 +32,7 @@ clean_pdf:	clean
 
 clean:
 	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi cv.tex qr.tex CV.zip CV.tar.xz CV_latex.tar.xz CV_web.tar.xz CV_latex.tar CV_web.tar
+	rm -rf web
 
 arch:	clean
 	rm -f CV.zip
@@ -42,6 +43,20 @@ tar:	clean
 	rm -f CV.tar.xz
 	tar cvvJf CV.tar.xz *
 	@echo "CV.tar.xz generated"
+
+folder:	cv clean
+	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls pdftex.cfg *.sty xml/cv.xml xml/cv_latex.xsl
+	@echo "CV_latex.tar.xz generated"
+	mkdir -p web
+	cp CV_latex.tar.xz cv.pdf CV-Mathieu-Chataigner.pdf xml/cv.xml web
+	rsync -auv xml/css web/
+
+dev:	folder
+	cp xml/cv_html_dev.xsl web/cv_html.xsl
+	cp xml/dev.js web/script.js
+
+prod:	folder
+	cp xml/cv_html.xsl xml/script.js web
 
 web:	cv clean
 	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls pdftex.cfg *.sty xml/cv.xml xml/cv_latex.xsl
