@@ -1,0 +1,39 @@
+/*copyright mathieu CHATAIGNER, please send me a message if you want to use this template*/
+
+.print { display:block }
+body{font-size:11pt;}
+/*margin padding and size*/
+.block{width:100%;}
+.innerBlock{padding: 0px 05px 0px 05px;}
+.enteteBlock{padding: 0 05px 0px 05px;}
+.entete{padding-top:0px;padding-bottom:0px;}
+table{margin-top:0px;margin-bottom:0px;border-spacing:0px 0px;}
+#title{padding-top:0px ;padding-bottom: 0px;}
+#subtitle{padding-top:0px ;padding-bottom: 20px;}
+#content h2{margin-bottom:5px;}
+p{margin-top:0px;padding-top:0px;}
+tr{page-break-inside:avoid;margin-bottom:10px;}
+
+/*div*/
+.single{clear:both;padding-left:5%;padding-right:5%;}
+.center{text-align:center;}
+.left{margin-left:0;}
+.right{margin-right:0;}
+.subject{font-weight:bold;}
+.address{font-style:italic;}
+.footer{padding-bottom:0px;}
+.head:after{content:" : "}
+.head{float:left;}
+
+
+/*colors*/
+/*.bgcolored{color:#819FF7;}*/
+/*#entete.bgcolored{color:#000000;}
+#entete h2,#entete h3,#entete ul{color:#666666;}
+a{color:#000000; }
+a:hover,a:focus {color:#000000; }
+*/
+/*font*/
+#entete h1{font-size:2.0em;}
+#entete h1{padding-top:5px;}
+
