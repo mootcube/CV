@@ -46,9 +46,8 @@ tar:	clean
 web:	clean
 	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls pdftex.cfg *.sty xml/cv.xml xml/cv_latex.xsl
 	@echo "CV_latex.tar.xz generated"
-	@echo pwd
 	tar cvvf CV_web.tar CV_latex.tar.xz
-	tar rvvCf xml CV_web.tar cv.xml cv_html.xsl css
+	tar rvvCf xml CV_web.tar cv.xml cv_html.xsl index.php css
 	xz CV_web.tar
 	@echo "CV_web.tar.xz generated"
 
