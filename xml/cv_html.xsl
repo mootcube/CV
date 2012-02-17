@@ -163,7 +163,7 @@
 								<div class="head"><xsl:apply-templates select="field"/></div>
 								<div class="data">
 									<p><xsl:apply-templates select="description"/></p>
-									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+									<xsl:if test="tools"><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -199,8 +199,8 @@
 										<xsl:apply-templates select="title"/>
 									</xsl:otherwise>
 									</xsl:choose>
-									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.</p><!--br/--><p><xsl:apply-templates select="description"/></p>
-									<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+									</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.</p><p><xsl:apply-templates select="description"/></p>
+									<xsl:if test="tools"><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -222,7 +222,7 @@
 							<div>
 								<div class="head"><xsl:apply-templates select="title"/></div>
 								<div class="data"><p><xsl:apply-templates select="description"/></p>
-								<xsl:if test="tools"><!--br/--><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+								<xsl:if test="tools"><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
 								</div>
 								<div class="clear"></div>
 							</div>
