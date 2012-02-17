@@ -15,8 +15,10 @@ div#conteneur{margin-left: 10px;margin-right:10px; width:940px;}
 .enteteBlock{padding: 0px 50px 20px 50px;}
 .entete{padding-top:40px;padding-bottom:5px;}
 #entete{margin-top:5px; border-top-left-radius:50px;border-top-right-radius:50px;}
-#enteteLeft{width:65%;}
+/*#enteteLeft{width:65%;}
 #enteteRight{width:35%;}
+*/
+#entete h1{padding-top:15px;}
 #title{padding-top: 40px;padding-bottom: 0px;}
 #subtitle{padding-top: 20px;padding-bottom: 50px;}
 #content{border-bottom-left-radius:50px;border-bottom-right-radius:50px;}

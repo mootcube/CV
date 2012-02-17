@@ -32,9 +32,9 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1024px)" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
-		<link rel="stylesheet" type="text/css" media="(min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/>
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1024px)" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/>
 		<style media="all">
 			.colored,#content h2,.head{color:#<xsl:apply-templates select="color"/>;}
 		</style>
@@ -110,7 +110,11 @@
 					<div class="footer innerBlock">
 						Mis à jour le <xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/><br/>Mon site internet pour la dernière version : <a><xsl:attribute name="href"><xsl:apply-templates select="update/@site"/></xsl:attribute><xsl:apply-templates select="update/@site"/></a>
 					</div>
+				<div class="footer innerBlock print" style="margin-right=10px;">
+					MeCard: <br/><img width="130px" src="temp/cv.png" />
 				</div>
+				</div>
+
 				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>
@@ -174,13 +178,6 @@
 								</div>
 								<div class="clear"></div>
 							</div>
-							<!--tr>
-								<th><xsl:apply-templates select="name"/></th>
-								<td><p>
-									<p><xsl:apply-templates select="level"/>
-									<xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
-								</p></td>
-							</tr-->
 </xsl:template>
 
 
