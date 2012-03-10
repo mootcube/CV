@@ -142,10 +142,10 @@
 								<div class="data">
 									<p>
 										<xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
-									</p>
+									</p><xsl:if test="field">
 									<p>
 										<xsl:apply-templates select="field"/>.
-									</p>
+									</p></xsl:if>
 									<xsl:if test="misc"><p>
 										<xsl:apply-templates select="misc"/>.
 									</p></xsl:if>

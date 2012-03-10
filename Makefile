@@ -1,5 +1,5 @@
-all: clean_pdf qr cv 
-	make clean
+all: clean clean_pdf qr cv
+
 
 %.pdf:	%.tex
 	pdflatex $< > /dev/null
@@ -20,8 +20,8 @@ qr:
 
 cv:
 	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
-	pdflatex cv.tex 
 	pdflatex cv.tex > /dev/null
+	pdflatex cv.tex 
 	@echo "cv.pdf generated"
 	cp cv.pdf CV-Mathieu-Chataigner.pdf
 

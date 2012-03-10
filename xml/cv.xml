@@ -34,7 +34,7 @@
 <web>http://www.cranfield.ac.uk/</web>
 <location>Angleterre</location>
 <title>Master ès Sciences</title>
-<field>Mathématiques Appliquée et Informatique</field>
+<field>Mathématiques Appliquées et Informatique</field>
 <misc>Thèse de Master en Cloud Computing</misc>
 </formation>
 <formation>
@@ -51,7 +51,7 @@
 <web>http://www.jbsrouen.org/site/index.php</web>
 <location>Rouen, Normandie</location>
 <title>Baccalauréat S</title>
-<field>spé. SVT option Physique-Chimie</field>
+<misc>Spécialité SVT option Physique-Chimie</misc>
 </formation>
 </section>
 
@@ -59,7 +59,7 @@
 <competence>
 <field>Logiciel</field>
 <description>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</description>
-<tools><strong>Java/JEE, Python, UML, SQL</strong>, C<sharp/></tools>
+<tools><strong>Java/JEE, Python, UML, SQL</strong>, F<sharp/>, C<sharp/></tools>
 </competence>
 <competence>
 <field>Grande échelle</field>
@@ -98,7 +98,7 @@
 <web>http://invivoo.com/invivoo</web>
 <location>Courbevoie (92)</location>
 <tools>F<sharp/>, C<sharp/>, .Net Framework</tools>
-<description>Assistance au développement d'un progiciel d'automate de trading en interne au sein d’ Invivoo. Réalisation d'un module de monitoring du système, de l'application et des automates. Le développement est réalisé  en langage fonctionnel F<sharp/> pour des raisons de performance et de facilité  de codage et de maintenabilité. </description>
+<description>Développement d'un progiciel d'automate de trading au sein d’ Invivoo. Réalisation d'un module de monitoring du système, de l'application et des automates. Le développement est réalisé  en langage fonctionnel F<sharp/> pour des raisons de performance, de facilité de codage et de maintenabilité. </description>
 </experience>
 <experience>
 <year>2011 (6<nbsp/>mois)</year>
@@ -106,18 +106,18 @@
 <entreprise>Cranfield University</entreprise>
 <web>http://www.cranfield.ac.uk/</web>
 <location>Angleterre</location>
-<tools><strong>Cloud Computing, MapReduce</strong>, Microsoft Windows Azure, C<sharp/>, .net Framework</tools>
+<tools><strong>Cloud Computing, MapReduce</strong>, Microsoft Windows Azure, C<sharp/>, .Net<nbsp/>Framework</tools>
 <description>Spécification, conception, développement et tests d'une application visant à effectuer des opération de regroupement d'informations dans un environnement de Cloud Computing. Application du Design Pattern MapReduce dans le but d'aggréger les différentes simulations concernants les pertes et profits de produits boursiers.</description>
 </experience>
 <experience>
 <year>2010 (6<nbsp/>mois)</year>
 <title>Projet INSA Certifié (PIC)</title>
 <titleweb>http://asi.insa-rouen.fr/formation/pic</titleweb>
-<entreprise>Fondation UNIT</entreprise>
+<entreprise>Fondation Université Numérique Ingénierie et Technologie (UNIT)</entreprise>
 <web>http://www.unit.eu/</web>
 <location>Rouen (76)</location>
 <tools><strong>Java, JEE, Tomcat, XML, XSL</strong>, JavaScript, Open Archive Initiative, ORI-OAI</tools>
-<description>Projet industriel à mi-temps, certifié ISO 9001 : 2008 (Management de la Qualité). Amélioration et ajout de fonctionnalités au portail UNIT, moteur de recherche de ressources pédagogiques libres sur Internet : <link href="http://www.unit.eu/">www.unit.eu</link>.</description>
+<description>Projet informatique industriel à mi-temps, certifié ISO 9001 : 2008 (Management de la Qualité). Amélioration et ajout de fonctionnalités au portail UNIT, moteur de recherche de ressources pédagogiques libres sur Internet : <link href="http://www.unit.eu/">www.unit.eu</link>.</description>
 </experience>
 <experience>
 <year>2010 (2<nbsp/>mois)</year>
@@ -143,7 +143,7 @@
 <entreprise>AJIR</entreprise>
 <web>http://ajir.insa-rouen.fr</web>
 <location>Rouen (76)</location>
-<description>Membre du Conseil d’Administration et Responsable Informatique.<newline/> Troisième année d'existence (Pépinière-Junior-Entreprise, type Junior-Entreprise) : 20000<euro/> de CA, 35 membres. Mon rôle a consisté en l'amélioration du site internet, la maintenance du serveur et au support informatique des membres.</description>
+<description>Membre du Conseil d’Administration et Responsable Informatique.<newline/> Troisième année d'existence (Pépinière-Junior-Entreprise, type Junior-Entreprise) : 20k<euro/> de CA, 35 membres. Mon rôle a consisté en l'amélioration du site internet, la maintenance du serveur et au support informatique des membres.</description>
 </experience>
 <experience>
 <year>2009 (2<nbsp/>mois)</year>

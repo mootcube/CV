@@ -18,7 +18,7 @@
 
 \documentclass[11pt,a4paper,<xsl:apply-templates select="lang"/>]{moderncv}%
 <!--%\documentclass[11pt,a4paper,pdfcenterwindow,pdffitwindow,pdftoolbar=false,pdfmenubar=false,pdfpagelayout=OneColumn]{moderncv}
--->\usepackage[pdftex]{hyperref}%
+-->%\usepackage[pdftex]{hyperref}%
 <xsl:choose>
 	<xsl:when test="lang = 'fr'">%\usepackage[francais]{babel}%</xsl:when>
 	<xsl:otherwise></xsl:otherwise>
@@ -60,8 +60,8 @@
 \email{<xsl:apply-templates select="profile/mail"/>}                      % optional, remove the line if not wanted
 \homepage{<xsl:apply-templates select="update/@site"/>}                % optional, remove the line if not wanted
 %\extrainfo{Age <xsl:apply-templates select="profile/age"/>\\<xsl:apply-templates select="profile/drive"/>} % optional, remove the line if not wanted
-\photo[64pt]{qr-pics}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-<xsl:if test="profile/field">\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%</xsl:if>
+\photo[36pt]{qr-pics}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+<!--xsl:if test="profile/field"-->\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%<!--/xsl:if-->
 <!--
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter%
@@ -80,16 +80,20 @@
 
 
 
-\renewcommand*{\namefont}{\fontsize{22}{36}\sffamily\mdseries\upshape}%
+\renewcommand*{\namefont}{\fontsize{20}{36}\sffamily\mdseries\upshape}%
+\renewcommand*{\titlefont}{\fontsize{14}{36}\sffamily\mdseries\upshape}%
 %\renewcommand*{\namefont}{\fontsize{34}{36}\sffamily\mdseries\upshape}%
-
-\renewcommand*{\titlefont}{\fontsize{16}{36}\sffamily\mdseries\upshape}%
 
 \begin{document}%
 \hypersetup{%
   pdftitle={<xsl:apply-templates select="profile/name"/>~<xsl:apply-templates select="profile/surname"/> -- <xsl:apply-templates select="title"/>},%
 }%
 \fancyfoot[c]{\parbox{0.8\textwidth}{\center\color{color2}\addressfont\fontsize{7}{9}\upshape Mis~à~jour~le~<xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/>\\ Mon~site~pour~la~dernière~version~:~\href{<xsl:apply-templates select="update/@site"/>}{<xsl:apply-templates select="update/@site"/>}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+
+%\fancyfoot[r]{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+
+%\fancyfoot[r]{\thepage/\pageref{lastpage}}
+
 \maketitle%
 %\vspace{-1.5em}%
 <xsl:apply-templates select="section"/>
@@ -114,47 +118,6 @@
 %\nocitemisc{misc1,misc2,misc3}
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
--->
-
-<!--
-\begin{pspicture}(64pt,64pt)
-\psbarcode{MECARD:N:<xsl:apply-templates select="profile/surname"/>,<xsl:apply-templates select="profile/name"/>;TEL:<xsl:apply-templates select="profile/phone"/>;EMAIL:<xsl:apply-templates select="profile/mail"/>;URL:<xsl:apply-templates select="update/@site"/>;;}
-{eclevel=L height=1 width=1}{qrcode}
-\end{pspicture}
--->
-<!--
-\begin{pspicture}(2cm,2cm)
-	\obeylines
-	\psbarcode{%
-BEGIN:VCARD
-VERSION:4.0
-N:CHATAIGNER;Mathieu;;M.;
-FN:M. Mathieu CHATAIGNER
-NAME:CHATAIGNER
-TEL;PREF=1;TYPE="work,cell";VALUE=uri:tel:+33684858322
-ADR:;;1 rue de la garenne;Salouel;;80480;France
-EMAIL:mathieu.chataigner@gmail.com
-URL:http://mathieu.chataigner.pro/
-END:VCARD
-}{eclevel=L width=2 height=2}{qrcode}%
-\end{pspicture}
--->
-
-<!--\begin{pspicture}(1in,1in)
-	\obeylines
-	\psbarcode{%
-BEGIN:VCARD^^J
-VERSION:3.0^^J
-N:Barczynski;Wojciech^^J
-FN:Wojciech Barczynski^^J
-ORG:^^J
-URL:http://wbarczynski.org^^J
-EMAIL;TYPE=INTERNET:wbarczynski@gmail.com^^J
-TEL;TYPE=voice,work,pref:+49 00000000^^J
-ADR;TYPE=intl,work,postal,parcel:;;STREET NAME;CITY;;POST CODE;Germany^^J
-END:VCARD
-}{width=0.9 height=0.9}{qrcode}%
-\end{pspicture}
 -->
 
 \end{document}
