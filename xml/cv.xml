@@ -18,8 +18,8 @@
 
 <profile>
 <name>Mathieu</name><surname>Chataigner</surname>
-<title>Ingénieur Informatique</title>
-<field>Architecture des Systèmes d'Information</field>
+<title>Ingénieur Étude et Développement</title>
+<!--field>Architecture des Systèmes d'Information</field-->
 <address><street>1 rue de la garenne</street><cp>80480 Salouel</cp></address>
 <phone>+33 6 84 85 83 22</phone>
 <mail>mathieu.chataigner@gmail.com</mail>
@@ -51,7 +51,7 @@
 <web>http://www.jbsrouen.org/site/index.php</web>
 <location>Rouen, Normandie</location>
 <title>Baccalauréat S</title>
-<field>spé. SVT option Physique-Chimie avec mention</field>
+<field>spé. SVT option Physique-Chimie</field>
 </formation>
 </section>
 

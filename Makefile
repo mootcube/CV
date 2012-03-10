@@ -1,4 +1,4 @@
-all: clean_pdf cv CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
+all: clean_pdf qr cv 
 	make clean
 
 %.pdf:	%.tex
@@ -13,12 +13,14 @@ all: clean_pdf cv CV-Mathieu-Chataigner.pdf Resume-Mathieu-Chataigner.pdf
 #	cp temp.pdf $@
 	@echo "$@ generated"
 
-cv:
+qr:
 	xsltproc xml/cv_latex_qr.xsl xml/cv.xml > qr.tex
+	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
+	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
+
+cv:
 	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
-	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
-	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
-	pdflatex cv.tex > /dev/null
+	pdflatex cv.tex 
 	pdflatex cv.tex > /dev/null
 	@echo "cv.pdf generated"
 	cp cv.pdf CV-Mathieu-Chataigner.pdf

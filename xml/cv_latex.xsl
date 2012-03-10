@@ -61,7 +61,7 @@
 \homepage{<xsl:apply-templates select="update/@site"/>}                % optional, remove the line if not wanted
 %\extrainfo{Age <xsl:apply-templates select="profile/age"/>\\<xsl:apply-templates select="profile/drive"/>} % optional, remove the line if not wanted
 \photo[64pt]{qr-pics}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%
+<xsl:if test="profile/field">\quote{<xsl:apply-templates select="profile/field"/>}%\huge Recherche d'emploi \small\\~\\ \Large Ingénieur Junior dans les nouvelles technologies}%</xsl:if>
 <!--
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter%
@@ -80,8 +80,10 @@
 
 
 
-\renewcommand*{\namefont}{\fontsize{26}{36}\sffamily\mdseries\upshape}%
+\renewcommand*{\namefont}{\fontsize{22}{36}\sffamily\mdseries\upshape}%
 %\renewcommand*{\namefont}{\fontsize{34}{36}\sffamily\mdseries\upshape}%
+
+\renewcommand*{\titlefont}{\fontsize{16}{36}\sffamily\mdseries\upshape}%
 
 \begin{document}%
 \hypersetup{%
