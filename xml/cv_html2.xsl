@@ -40,12 +40,16 @@
 	
 	
       </head>
-      <body>
+      <body  data-spy="scroll" data-target=".bs-docs-sidebar">
 	
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	
 	<script src="js/application.js"/>
+	
+	<script type="text/javascript">
+	  $('#navbar').affix()
+	</script>
 	
 	<!--script type="text/javascript">
 
@@ -111,7 +115,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<p class="lead"><xsl:apply-templates select="profile/title"/></p>
 	      </div>
 	      <div class="span3">
-		<ul id="info" class="hidden-phone">
+		<ul id="info" class="unstyled">
 		  <li><address><xsl:apply-templates select="profile/address/street"/><br/><xsl:apply-templates select="profile/address/cp"/></address></li>
 		  <li><xsl:apply-templates select="profile/phone"/></li>
 		  <li><xsl:apply-templates select="profile/mail"/></li>
@@ -127,9 +131,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="container">
 	  <div class="row">
 	    <div class="span3 bs-docs-sidebar">
-              <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <ul class="nav nav-list bs-docs-sidenav affix">
 		<xsl:for-each select="section">
-		  <li><a><xsl:attribute name="href">#<xsl:value-of select="@title" /></xsl:attribute><i class="icon-chevron-right"></i> <xsl:value-of select="@title" /></a></li>
+		  <li><a><xsl:attribute name="href">#<xsl:value-of select="translate(@title,translate(@title,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',''),'')" /></xsl:attribute><i class="icon-chevron-right"></i> <xsl:value-of select="@title" /></a></li>
 		</xsl:for-each>
               </ul>
 	    </div>
@@ -253,7 +257,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </xsl:template>
 
 <xsl:template match="section">
-  <section><xsl:attribute name="id"><xsl:value-of select="@title" /></xsl:attribute>
+  <section><xsl:attribute name="id"><xsl:value-of select="translate(@title,translate(@title,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',''),'')" /></xsl:attribute>
   <div class="page-header">
     <h1 ><a name="projets"></a><xsl:apply-templates select="@title"/></h1>
   </div>
@@ -261,7 +265,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   </section>
 </xsl:template>
 
-<xsl:template match="strong"><span class="subject"><xsl:apply-templates/></span></xsl:template>
+<xsl:template match="strong"><strong><xsl:apply-templates/></strong></xsl:template>
 
 <xsl:template match="newline"><br/></xsl:template>
 

@@ -23,7 +23,7 @@
     <name>Mathieu</name><surname>Chataigner</surname>
     <title>Ingénieur Étude et Développement</title>
     <!--field>Architecture des Systèmes d'Information</field-->
-    <address><street>26 rue violet 4 gauche</street><cp>75015 Paris</cp></address>
+    <address><street>1 rue de la garenne</street><cp>80480 Salouel</cp></address>
     <phone>+33 6 84 85 83 22</phone>
     <mail>mathieu.chataigner@gmail.com</mail>
     <age>24 ans</age>
@@ -62,12 +62,12 @@
     <competence>
       <field>Logiciel</field>
       <description>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</description>
-      <tools><strong>Java/JEE, Scala, Haskell, Python, UML, SQL</strong>, F<sharp/>, C<sharp/></tools>
+      <tools><strong>Java/JEE, Python, UML, SQL</strong>, F<sharp/>, C<sharp/></tools>
     </competence>
     <competence>
       <field>Grande échelle</field>
       <description>Architecture répartie, Cloud Computing, calculs haute performance.</description>
-      <tools><strong>JEE, Web Services</strong></tools>
+      <tools><strong>JEE, Web Services</strong>, Grid Services, MPI, Windows Azure</tools>
     </competence>
     <competence>
       <field>Réseau</field>
@@ -79,13 +79,9 @@
       <description>Administration système.</description>
       <tools><strong>GNU/Linux, Bash, Python</strong></tools>
     </competence>
-    <competence>
-      <field>Langues</field>
-      <description>Anglais : Professionnel, score TOEIC <strong>880/990</strong>, déc. 2010<newline/>Allemand : Notions</description>
-    </competence>
   </section>
 
-  <!--section title="Langues">
+  <section title="Langues">
     <language>
       <name>Anglais</name>
       <level>Professionnel</level>
@@ -95,7 +91,7 @@
       <name>Allemand</name>
       <level>Notions</level>
     </language>
-  </section-->
+  </section>
 
   <section title="Expériences">
     <experience>
