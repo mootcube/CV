@@ -5,6 +5,8 @@
   <xsl:variable name="techUsed"><xsl:apply-templates select="/cv/techUsed"/></xsl:variable>
   <xsl:variable name="tools"><xsl:apply-templates select="/cv/tools"/></xsl:variable>
   <xsl:variable name="obj"><xsl:apply-templates select="/cv/obj"/></xsl:variable>
+  <xsl:variable name="updateText"><xsl:apply-templates select="/cv/misc/updateText"/></xsl:variable>
+  <xsl:variable name="siteLink"><xsl:apply-templates select="/cv/misc/siteLink"/></xsl:variable>
   <xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'" />
   <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 
@@ -32,42 +34,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
 	<link href="css/docs2.css" rel="stylesheet" />
 	
 	
-	<!--link rel="stylesheet" type="text/css" media="all" href="css/common.css"/>
-	    <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
-	    <link id="style" rel="stylesheet" type="text/css" media="screen" href="css/style.css"/-->
-	<!--link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 1023px)" href="css/handheld.css"/-->
-	
-	<style media="all">
-	  .colored,#content h2,.head{color:#<xsl:apply-templates select="color"/>;}
-	</style>
-	<style media="print">
-	  .bgcolored{color:#<xsl:apply-templates select="color"/><!--819FF7-->;}
-	</style>
-	<style media="screen">
-	  .bgcolored{color:#FFFFFF;background-color:#<xsl:apply-templates select="color"/>;}
-	  a{color:#<xsl:apply-templates select="color"/>;}
-	  a:hover,a:focus {color:#<xsl:apply-templates select="color"/>; }
-	</style>
       </head>
       <body>
 	
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
 	
+	<script src="js/application.js"/>
 	
-	<script type="text/javascript" src="script.js"/>
-	<!--[if lte IE 6]>
-	    <style type="text/css">
-	    body{text-align:center;}
-	    #cv{margin-left:30px; margin-right:30px; width:100%;}
-	    #conteneur{width:800px; display:inline; text-align:left;}
-	    </style>
-	    <![endif]-->
 	<!--script type="text/javascript">
 
 var _gaq = _gaq || [];
@@ -127,12 +106,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<header class="jumbotron subhead" id="overview">
 	  <div class="container">
 	    <div class="row">
-	      <div class="span7">
+	      <div class="span9">
 		<h1><xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:apply-templates select="profile/surname"/></h1>
 		<p class="lead"><xsl:apply-templates select="profile/title"/></p>
 	      </div>
-	      <div class="span5">
-		<ul id="info">
+	      <div class="span3">
+		<ul id="info" class="hidden-phone">
 		  <li><address><xsl:apply-templates select="profile/address/street"/><br/><xsl:apply-templates select="profile/address/cp"/></address></li>
 		  <li><xsl:apply-templates select="profile/phone"/></li>
 		  <li><xsl:apply-templates select="profile/mail"/></li>
@@ -145,53 +124,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  </div>
 	</header>
 	
-	
-	
-	<div id="outConteneur">
-	  <div id="conteneur">
-	    <div id="entete" class="block left right bgcolored">
-	      <div class="enteteBlock">
-		<div id="enteteLeft" class="entete left">
-		  <h1><xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:value-of select="translate(profile/surname, $smallcase, $uppercase)"/></h1>
-		  <h2><xsl:apply-templates select="profile/title"/></h2>
-		  <h3><xsl:apply-templates select="profile/field"/></h3>
-		</div>
-		<div id="enteteRight" class="entete right">
-		  <ul id="info">
-		    <li><address><xsl:apply-templates select="profile/address/street"/><br/><xsl:apply-templates select="profile/address/cp"/></address></li>
-		    <li><xsl:apply-templates select="profile/phone"/></li>
-		    <li><xsl:apply-templates select="profile/mail"/></li>
-		    <!--li><a><xsl:attribute name="href">mailto:<xsl:apply-templates select="profile/mail"/></xsl:attribute><xsl:apply-templates select="profile/mail"/></a></li-->
-		    <li>Age : <xsl:apply-templates select="profile/age"/></li>
-		    <li><xsl:apply-templates select="profile/drive"/></li>
-		  </ul>
-		</div>
-		<div class="clear"></div>
-	      </div>
-	      <div class="clear"></div>
+	<div class="container">
+	  <div class="row">
+	    <div class="span3 bs-docs-sidebar">
+              <ul class="nav nav-list bs-docs-sidenav affix-top">
+		<xsl:for-each select="section">
+		  <li><a><xsl:attribute name="href">#<xsl:value-of select="@title" /></xsl:attribute><i class="icon-chevron-right"></i> <xsl:value-of select="@title" /></a></li>
+		</xsl:for-each>
+              </ul>
 	    </div>
-	    <div class="clear"></div>
-	    <div id="divtitle" class="block left right">
-	      <h1 id="title" class="center colored"></h1><!--RECHERCHE D'EMPLOI</h1>
-	      <h1 id="subtitle" class="center">Ingénieur Junior dans les nouvelles technologies.</h1-->
-	    </div>
-	    <div class="clear"></div>
-	    <div id="content" class="block left right">
+	    <div class="span9">
 	      <xsl:apply-templates select="section"/>
-	      <div class="clear"></div>
-	      <div class="footer innerBlock">
-		Mis à jour le <xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/><br/>Mon site internet pour la dernière version : <a><xsl:attribute name="href"><xsl:apply-templates select="update/@site"/></xsl:attribute><xsl:apply-templates select="update/@site"/></a>
+	    </div>
+	  </div>
+	</div>
+	
+	<footer class="footer">
+	  <div class="container">
+	    <div class="row">
+	      <div class="span3"/>
+	      <div class="span9">
+		<xsl:copy-of select="$updateText"/><xsl:apply-templates select="modificationDate/d"/>/<xsl:apply-templates select="modificationDate/m"/>/<xsl:apply-templates select="modificationDate/y"/><br/><xsl:copy-of select="$siteLink"/> : <a><xsl:attribute name="href"><xsl:apply-templates select="update/@site"/></xsl:attribute><xsl:apply-templates select="update/@site"/></a>
 	      </div>
-	      <div class="footer innerBlock print" style="margin-right=10px;">
+	    </div>
+	    <div class="row" style="margin-top:10px;">
+	      <div class="span12 pagination-centered">
 		MeCard: <br/><img width="130px" src="temp/cv.png" />
 	      </div>
+	      <div style="margin:0;padding:0;display:none;visibility:hidden"><h1>Mathieu CHATAIGNER, Mathieu CHATAIGNIER CHATIAGNER CHATIAGNIER</h1></div>
 	    </div>
-
-	    <div class="clear"></div>
 	  </div>
-	  <div class="clear"></div>
-	  <div style="margin:0;padding:0;display:none;visibility:hidden"><h1>Mathieu CHATAIGNER, Mathieu CHATAIGNIER CHATIAGNER CHATIAGNIER</h1></div>
-	</div>
+	</footer>
 </body>
 </html>
 </xsl:template>
@@ -207,14 +170,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 
 
-
-
-
-
-
 <xsl:template match="formation">
   <div>
-    <div class="head"><xsl:apply-templates select="year"/></div>
+    <h3><xsl:apply-templates select="year"/></h3>
     <div class="data">
       <p>
 	<xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
@@ -226,36 +184,33 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  <xsl:apply-templates select="misc"/>.
 	</p></xsl:if>
     </div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
 <xsl:template match="competence">
   <div>
-    <div class="head"><xsl:apply-templates select="field"/></div>
+    <h3><xsl:apply-templates select="field"/></h3>
     <div class="data">
       <p><xsl:apply-templates select="description"/></p>
       <xsl:if test="tools"><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
     </div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
 <xsl:template match="language">
   <div>
-    <div class="head"><xsl:apply-templates select="name"/></div>
+    <h3><xsl:apply-templates select="name"/></h3>
     <div class="data">
       <p><xsl:apply-templates select="level"/>
       <xsl:if test="description"> (<xsl:apply-templates select="description"/>)</xsl:if>.</p>
     </div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
 
 <xsl:template match="experience">
   <div>
-    <div class="head"><xsl:apply-templates select="year"/></div>
+    <h3><xsl:apply-templates select="year"/></h3>
     <div class="data">
       <p><span class="subject">
 	<xsl:choose>
@@ -274,15 +229,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	</span>, <span class="address"><a href="http://www.cranfield.ac.uk/"><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="entreprise"/></a></span>, <xsl:apply-templates select="location"/>.</p><p><xsl:apply-templates select="description"/></p>
 	<xsl:if test="tools"><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
     </div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
 <xsl:template match="interest" >
   <div>
-    <div class="head"><xsl:apply-templates select="field"/></div>
+    <h3><xsl:apply-templates select="field"/></h3>
     <div class="data"><p><xsl:apply-templates select="description"/></p></div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
@@ -292,19 +245,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 <xsl:template match="project" >
   <div>
-    <div class="head"><xsl:apply-templates select="title"/></div>
+    <h3><xsl:apply-templates select="title"/></h3>
     <div class="data"><p><xsl:apply-templates select="description"/></p>
     <xsl:if test="tools"><p><xsl:copy-of select="$techUsed"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
     </div>
-    <div class="clear"></div>
   </div>
 </xsl:template>
 
 <xsl:template match="section">
-  <div class="innerBlock">
-    <h2><a name="projets"></a><xsl:apply-templates select="@title"/></h2>
-    <xsl:apply-templates/>
+  <section><xsl:attribute name="id"><xsl:value-of select="@title" /></xsl:attribute>
+  <div class="page-header">
+    <h1 ><a name="projets"></a><xsl:apply-templates select="@title"/></h1>
   </div>
+  <xsl:apply-templates/>
+  </section>
 </xsl:template>
 
 <xsl:template match="strong"><span class="subject"><xsl:apply-templates/></span></xsl:template>
