@@ -58,7 +58,7 @@ dev:	folder
 	cp xml/dev.js web/script.js
 
 prod:	folder
-	cp xml/cv_html.xsl xml/script.js web
+	cp -r xml/cv_html.xsl xml/script.js xml/js xml/img xml/css xml/cv.html web
 
 web:	cv clean
 	tar cvvJf CV_latex.tar.xz Makefile moderncv.cls pdftex.cfg *.sty xml/cv.xml xml/cv_latex.xsl

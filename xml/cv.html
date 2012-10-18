@@ -18,17 +18,13 @@
     <meta name="Date-Revision-yyyymmdd" content="2012/03/11" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/docs2.css" rel="stylesheet" />
   </head>
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/application.js"></script>
-    <script type="text/javascript">
-	  $('#navbar').affix()
-	</script>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -43,23 +39,30 @@
               <li class="active">
                 <a href="./cv.html">Curriculum Vitae</a>
               </li>
-              <li class="">
-                <a href="">Github</a>
+              <li class="visible-desktop">
+                <a href="http://gplus.to/mathieuchataigner">
+                  <img width="25px" height="25px" src="img/googleplus.png" alt="Google Plus" />
+                </a>
               </li>
-              <li class="">
-                <a href="">Google +</a>
+              <li class="visible-desktop">
+                <a href="http://twitter.com/mchataigner">
+                  <img width="25px" height="25px" src="img/twitter.png" alt="Twitter" />
+                </a>
               </li>
-              <li class="">
-                <a href="">Facebook</a>
+              <li class="visible-desktop">
+                <a href="http://github.com/mootcube">
+                  <img width="25px" height="25px" src="img/github.png" alt="GitHub" />
+                </a>
               </li>
-              <li class="">
-                <a href="">Twitter</a>
+              <li class="visible-desktop">
+                <a href="http://fr.linkedin.com/in/mathieuchataigner">
+                  <img width="25px" height="25px" src="img/linkedin.png" alt="LinkedIn" />
+                </a>
               </li>
-              <li class="">
-                <a href="">LinkedIn</a>
-              </li>
-              <li class="">
-                <a href="">Viadeo</a>
+              <li class="visible-desktop">
+                <a href="http://fr.viadeo.com/fr/profile/mathieu.chataigner1">
+                  <img width="25px" height="25px" src="img/viadeo.png" alt="Viadeo" />
+                </a>
               </li>
             </ul>
           </div>
@@ -71,12 +74,12 @@
         <div class="row">
           <div class="span9">
             <h1>Mathieu Chataigner</h1>
-            <p class="lead">Ingénieur Étude et Développement</p>
+            <p class="lead">Ingénieur Développeur Logiciel</p>
           </div>
           <div class="span3">
             <ul id="info" class="unstyled">
               <li>
-                <address>26 rue violet 4 gauche<br />75015 Paris</address>
+                <address>26 rue violet, 4 gauche<br />75015 Paris</address>
               </li>
               <li>+33 6 84 85 83 22</li>
               <li>mathieu.chataigner@gmail.com</li>
@@ -89,7 +92,7 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="span3 bs-docs-sidebar">
+        <div class="span3 bs-docs-sidebar hidden-phone">
           <ul class="nav nav-list bs-docs-sidenav affix">
             <li>
               <a href="#Formation"><i class="icon-chevron-right"></i>Formation</a>
@@ -109,26 +112,40 @@
           </ul>
         </div>
         <div class="span9">
-          <section id="Formation"><div class="page-header"><h1><a name="projets" id="projets"></a>Formation</h1></div>
-    <div><h3>2010 - 2011</h3><div class="data"><p>Master ès Sciences, <a href="http://www.cranfield.ac.uk/">Université de Cranfield</a>, Angleterre.
-	</p><p>Mathématiques Appliquées et Informatique.
-	</p><p>Thèse de Master en Cloud Computing.
-	</p></div></div>
-    <div><h3>2006 - 2011</h3><div class="data"><p>Ingénieur, <a href="http://asi.insa-rouen.fr/">INSA de Rouen (Institut National des Sciences Appliquées)</a>, Seine-Maritime (76).
-	</p><p>Architecture des Systèmes d’Information.
-	</p></div></div>
-    <div><h3>2006</h3><div class="data"><p>Baccalauréat S, <a href="http://www.jbsrouen.org/site/index.php">Lycée Jean-Baptiste de la Salle</a>, Rouen, Normandie.
-	</p><p>Spécialité SVT option Physique-Chimie.
-	</p></div></div>
-  </section>
-          <section id="Comptences"><div class="page-header"><h1><a name="projets" id="projets"></a>Compétences</h1></div>
-    <div><h3>Logiciel</h3><div class="data"><p>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</p><p>Outils : <strong>Java/JEE, Scala, Haskell, Python, UML, SQL</strong>, F#, C#.</p></div></div>
-    <div><h3>Grande échelle</h3><div class="data"><p>Architecture répartie, Cloud Computing, calculs haute performance.</p><p>Outils : <strong>JEE, Web Services</strong>.</p></div></div>
-    <div><h3>Réseau</h3><div class="data"><p>Modélisation logique, conception de l'architecture, déploiement, notions en sécurité.</p><p>Outils : <strong>modèle TCP/IP, DNS, NAT, firewall</strong>.</p></div></div>
-    <div><h3>Autre</h3><div class="data"><p>Administration système.</p><p>Outils : <strong>GNU/Linux, Bash, Python</strong>.</p></div></div>
-    <div><h3>Langues</h3><div class="data"><p>Anglais : Professionnel, score TOEIC <strong>880/990</strong>, déc. 2010<br />Allemand : Notions</p></div></div>
-  </section>
-          <section id="Expriences"><div class="page-header"><h1><a name="projets" id="projets"></a>Expériences</h1></div>
+          <section id="Formation">
+            <div class="page-header">
+              <h1>Formation</h1>
+            </div>
+            <dl class="dl-horizontal">
+    <dt>2010 - 2011</dt><dd>Master ès Sciences, <a href="http://www.cranfield.ac.uk/">Université de Cranfield</a>, Angleterre.
+  Mathématiques Appliquées et Informatique.
+    Thèse de Master en Cloud Computing.
+    </dd>
+    <dt>2006 - 2011</dt><dd>Ingénieur, <a href="http://asi.insa-rouen.fr/">INSA de Rouen (Institut National des Sciences Appliquées)</a>, Seine-Maritime (76).
+  Architecture des Systèmes d’Information.
+    </dd>
+    <dt>2006</dt><dd>Baccalauréat S, <a href="http://www.jbsrouen.org/site/index.php">Lycée Jean-Baptiste de la Salle</a>, Rouen, Normandie.
+  Spécialité SVT option Physique-Chimie.
+    </dd>
+  </dl>
+          </section>
+          <section id="Comptences">
+            <div class="page-header">
+              <h1>Compétences</h1>
+            </div>
+            <dl class="dl-horizontal">
+    <dt>Logiciel</dt><dd><p>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</p><p>Outils : <strong>Java/JEE, Scala, Haskell, Python, UML, SQL</strong>, F#, C#.</p></dd>
+    <dt>Grande échelle</dt><dd><p>Architecture répartie, Cloud Computing, calculs haute performance.</p><p>Outils : <strong>JEE, Web Services</strong>.</p></dd>
+    <dt>Réseau</dt><dd><p>Modélisation logique, conception de l'architecture, déploiement, notions en sécurité.</p><p>Outils : <strong>modèle TCP/IP, DNS, NAT, firewall</strong>.</p></dd>
+    <dt>Autre</dt><dd><p>Administration système.</p><p>Outils : <strong>GNU/Linux, Bash, Python</strong>.</p></dd>
+    <dt>Langues</dt><dd><p>Anglais : Professionnel, score TOEIC <strong>880/990</strong>, déc. 2010<br />Allemand : Notions</p></dd>
+  </dl>
+          </section>
+          <section id="Expriences">
+            <div class="page-header">
+              <h1>Expériences</h1>
+            </div>
+            <dl class="dl-horizontal">
     <div><h3>depuis nov. 2011</h3><div class="data"><p><span class="subject">Ingénieur études et développement</span>, <span class="address"><a href="http://invivoo.com/invivoo">Invivoo (Néomantis)</a></span>, Courbevoie (92).</p><p>Développement d'un progiciel d'automate de trading au sein d’ Invivoo. Réalisation d'un module de monitoring du système, de l'application et des automates. Le développement est réalisé  en langage fonctionnel F# pour des raisons de performance, de facilité de codage et de maintenabilité. </p><p>Technologies : F#, C#, .Net Framework.</p></div></div>
     <div><h3>2011 (6 mois)</h3><div class="data"><p><span class="subject">Thèse de Master</span>, <span class="address"><a href="http://www.cranfield.ac.uk/">Cranfield University</a></span>, Angleterre.</p><p>Spécification, conception, développement et tests d'une application visant à effectuer des opération de regroupement d'informations dans un environnement de Cloud Computing. Application du Design Pattern MapReduce dans le but d'aggréger les différentes simulations concernants les pertes et profits de produits boursiers.</p><p>Technologies : <strong>Cloud Computing, MapReduce</strong>, Microsoft Windows Azure, C#, .Net Framework.</p></div></div>
     <div><h3>2010 (6 mois)</h3><div class="data"><p><span class="subject"><a href="http://asi.insa-rouen.fr/formation/pic">Projet INSA Certifié (PIC)</a></span>, <span class="address"><a href="http://www.unit.eu/">Fondation Université Numérique Ingénierie et Technologie (UNIT)</a></span>, Rouen (76).</p><p>Projet informatique industriel à mi-temps, certifié ISO 9001 : 2008 (Management de la Qualité). Amélioration et ajout de fonctionnalités au portail UNIT, moteur de recherche de ressources pédagogiques libres sur Internet : <a style="white-space:nowrap;" href="http://www.unit.eu/">www.unit.eu</a>.</p><p>Technologies : <strong>Java, JEE, Tomcat, XML, XSL</strong>, JavaScript, Open Archive Initiative, ORI-OAI.</p></div></div>
@@ -136,19 +153,30 @@
     <div><h3>2010</h3><div class="data"><p><span class="subject">Étude en Junior Entreprise</span>, <span class="address"><a href="http://ajir.insa-rouen.fr/">Association Junior INSA Rouen (AJIR)</a></span>, Rouen (76).</p><p>Développement d’un portail de gestion électronique des stages : <a style="white-space:nowrap;" href="https://stage.insa-rouen.fr/">stage.insa-rouen.fr</a>.</p><p>Technologies : <strong>Python, Framework Django</strong>, HTML, CSS.</p></div></div>
     <div><h3>2009 - 2010 (1 an)</h3><div class="data"><p><span class="subject">Junior Entreprise</span>, <span class="address"><a href="http://ajir.insa-rouen.fr">AJIR</a></span>, Rouen (76).</p><p>Membre du Conseil d’Administration et Responsable Informatique.<br /> Troisième année d'existence (Pépinière-Junior-Entreprise, type Junior-Entreprise) : 20k€ de CA, 35 membres. Mon rôle a consisté en l'amélioration du site internet, la maintenance du serveur et au support informatique des membres.</p></div></div>
     <div><h3>2009 (2 mois)</h3><div class="data"><p><span class="subject">Stage de développement</span>, <span class="address"><a href="http://www.c-s.fr/">Communications &amp; Systèmes</a></span>, Toulouse (31).</p><p>Recherche d’une solution de type Open-Source permettant d’afficher des grands graphes de données et son implémentation.</p><p>Technologies : <strong>Java, XML, XSL</strong>.</p></div></div>
-  </section>
-          <section id="Centresdintrts"><div class="page-header"><h1><a name="projets" id="projets"></a>Centres d'intérêts</h1></div>
+  </dl>
+          </section>
+          <section id="Centresdintrts">
+            <div class="page-header">
+              <h1>Centres d'intérêts</h1>
+            </div>
+            <dl class="dl-horizontal">
     <div><h3>Sport</h3><div class="data"><p>Pratique régulière du VTT, du roller, de la musculation et de la natation.</p></div></div>
     <div><h3>Autre</h3><div class="data"><p>Amateur de jeux de société.</p></div></div>
     <div><h3>Musique</h3><div class="data"><p>Pratique du piano pendant 7 ans.<br /> Styles de musique favoris : Métal symphonique, Electro House, Classique.</p></div></div>
-  </section>
-          <section id="Projetseffectus"><div class="page-header"><h1><a name="projets" id="projets"></a>Projets effectués</h1></div>
+  </dl>
+          </section>
+          <section id="Projetseffectus">
+            <div class="page-header">
+              <h1>Projets effectués</h1>
+            </div>
+            <dl class="dl-horizontal">
     <div><h3>HPC - MPI Laplace</h3><div class="data"><p>Projet de l'UV Calculs Haute Performance. Réalisé en C avec la librairie <a style="white-space:nowrap;" href="http://fr.wikipedia.org/wiki/Message_Passing_Interface">MPI</a>, ce projet résout l'équation de Laplace en 2D avec des valeurs limites périphériques fixes de manière répartie sur plusieurs machines.</p><p>Technologies : MPI, C.</p></div></div>
     <div><h3>GridService</h3><div class="data"><p>Projet Java de réalisation d'un Grid Service (Web Service utilisant le GridComputing comme ressource et impliquant des contraintes de sécurité avec gestion des certificats). Utilisation du middleware <a style="white-space:nowrap;" href="http://www.globus.org/toolkit/">Globus Toolkit</a>.</p><p>Technologies : <strong>Java, WebService</strong>, GridService, Globus Toolkit.</p></div></div>
     <div><h3>BlatteWar</h3><div class="data"><p>Projet d'informatique répartie en Java avec la technologie <a style="white-space:nowrap;" href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html">RMI</a>. BlatteWar est une arène virtuelle où s'affrontent les IA conçues par des joueurs représentées par des blattes. La dernière vivante a gagné. Une interface web a été mise en place pour suivre l'avancement des parties.</p><p>Technologies : <strong>Java, RMI</strong>.</p></div></div>
     <div><h3>RobotRubik</h3><div class="data"><p>Il s'agit d'un robot conçu en LEGO Mindstorm qui résout le Rubik's Cube. Fan de ce casse-tête, j'ai réalisé la partie informatique du robot avec 3 autres camarades en Java par le biais de l'API <a style="white-space:nowrap;" href="http://lejos.sourceforge.net/">leJOS</a>.</p><p>Technologies : <strong>Java</strong>, LeJOS, Lego NXT.</p></div></div>
     <div><h3>ASIAventure</h3><div class="data"><p>Jeu d'aventure en mode texte. Ce projet a été effectué lors de l'UV Programmation Avancée (programmation objet avec le langage Java).</p><p>Technologies : <strong>Java, MVC</strong>.</p></div></div>
-  </section>
+  </dl>
+          </section>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="cv_html2.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="cv_html.xsl" ?>
 <cv>
   <update date="10/02/2012" site="http://mathieu.chataigner.pro/"/>
   <title>CV</title>
@@ -19,18 +19,25 @@
     <updateText>Mis à jour le </updateText>
     <siteLink>Mon site internet pour la dernière version</siteLink>
   </misc>
+  <socials>
+    <social name="Google Plus" img="img/googleplus.png">http://gplus.to/mathieuchataigner</social>
+    <social name="Twitter" img="img/twitter.png">http://twitter.com/mchataigner</social>
+    <social name="GitHub" img="img/github.png">http://github.com/mootcube</social>
+    <social name="LinkedIn" img="img/linkedin.png">http://fr.linkedin.com/in/mathieuchataigner</social>
+    <social name="Viadeo" img="img/viadeo.png">http://fr.viadeo.com/fr/profile/mathieu.chataigner1</social>
+  </socials>
   <profile>
     <name>Mathieu</name><surname>Chataigner</surname>
-    <title>Ingénieur Étude et Développement</title>
+    <title>Ingénieur Développeur Logiciel</title>
     <!--field>Architecture des Systèmes d'Information</field-->
-    <address><street>26 rue violet 4 gauche</street><cp>75015 Paris</cp></address>
+    <address><street>26 rue violet, 4 gauche</street><cp>75015 Paris</cp></address>
     <phone>+33 6 84 85 83 22</phone>
     <mail>mathieu.chataigner@gmail.com</mail>
     <age>24 ans</age>
     <drive>Permis B</drive>
   </profile>
 
-  <section title="Formation">
+  <section title="Formation" short="">
     <formation>
       <year>2010 - 2011</year>
       <school>Université de Cranfield</school>
@@ -58,7 +65,7 @@
     </formation>
   </section>
 
-  <section title="Compétences">
+  <section title="Compétences" short="">
     <competence>
       <field>Logiciel</field>
       <description>Algorithmique, conception et programmation avec divers paradigmes (impératif, objet, fonctionnel). Modélisation conceptuelle et bases de données relationnelles.</description>
@@ -97,7 +104,7 @@
     </language>
   </section-->
 
-  <section title="Expériences">
+  <section title="Expériences" short="">
     <experience>
       <year>depuis nov.<nbsp/>2011</year>
       <title>Ingénieur études et développement</title>
@@ -163,7 +170,7 @@
     </experience>
   </section>
 
-  <section title="Centres d'intérêts">
+  <section title="Centres d'intérêts" short="">
     <interest>
       <field>Sport</field>
       <description>Pratique régulière du VTT, du roller, de la musculation et de la natation.</description>
@@ -178,7 +185,7 @@
     </interest>
   </section>
 
-  <section title="Projets effectués">
+  <section title="Projets effectués" short="">
     <project>
       <title>HPC - MPI Laplace</title>
       <tools>MPI, C</tools>

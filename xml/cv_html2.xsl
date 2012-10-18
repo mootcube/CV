@@ -34,22 +34,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	
-	<link href="css/bootstrap.css" rel="stylesheet" />
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<!--link href="css/bootstrap-responsive.css" rel="stylesheet" /-->
 	<link href="css/docs2.css" rel="stylesheet" />
 	
 	
       </head>
       <body  data-spy="scroll" data-target=".bs-docs-sidebar">
 	
-	<script src="js/jquery.js"></script>
+	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	
 	<script src="js/application.js"/>
 	
-	<script type="text/javascript">
+	<!--script type="text/javascript">
 	  $('#navbar').affix()
-	</script>
+	</script-->
 	
 	<!--script type="text/javascript">
 
@@ -83,24 +83,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		  <li class="active">
                     <a href="./cv.html">Curriculum Vitae</a>
 		  </li>
-		  <li class="">
-		    <a href="">Github</a>
-		  </li>
-		  <li class="">
-                    <a href="">Google +</a>
-		  </li>
-		  <li class="">
-                    <a href="">Facebook</a>
-		  </li>
-		  <li class="">
-                    <a href="">Twitter</a>
-		  </li>
-		  <li class="">
-                    <a href="">LinkedIn</a>
-		  </li>
-		  <li class="">
-                    <a href="">Viadeo</a>
-		  </li>
+		  <xsl:apply-templates select="socials"/>
 		</ul>
               </div>
             </div>
@@ -130,7 +113,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="container">
 	  <div class="row">
-	    <div class="span3 bs-docs-sidebar">
+	    <div class="span3 bs-docs-sidebar hidden-phone">
               <ul class="nav nav-list bs-docs-sidenav affix">
 		<xsl:for-each select="section">
 		  <li><a><xsl:attribute name="href">#<xsl:value-of select="translate(@title,translate(@title,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',''),'')" /></xsl:attribute><i class="icon-chevron-right"></i> <xsl:value-of select="@title" /></a></li>
@@ -171,34 +154,47 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 
 
-
+<xsl:template match="socials">
+  <xsl:for-each select="social">
+    <li class="visible-desktop">
+      <a><xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute><img width="25px" height="25px"><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute><xsl:attribute name="alt"><xsl:value-of select="@name"/></xsl:attribute></img></a>
+    </li>
+  </xsl:for-each>
+</xsl:template>
 
 
 <xsl:template match="formation">
-  <div>
-    <h3><xsl:apply-templates select="year"/></h3>
-    <div class="data">
-      <p>
-	<xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
-	</p><xsl:if test="field">
-	<p>
-	  <xsl:apply-templates select="field"/>.
-	</p></xsl:if>
-	<xsl:if test="misc"><p>
-	  <xsl:apply-templates select="misc"/>.
-	</p></xsl:if>
-    </div>
-  </div>
+  
+  <dt><xsl:apply-templates select="year"/></dt>
+  <dd>
+  <!--div class="data"-->
+  <!--p-->
+    <xsl:apply-templates select="title"/>, <a ><xsl:attribute name="href"><xsl:apply-templates select="web"/></xsl:attribute><xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if></a>, <xsl:apply-templates select="location"/>.
+  <!--/p-->
+  <xsl:if test="field">
+    <!--p-->
+      <xsl:apply-templates select="field"/>.
+    <!--/p-->
+  </xsl:if>
+  <xsl:if test="misc">
+    <!--p-->
+      <xsl:apply-templates select="misc"/>.
+    <!--/p-->
+  </xsl:if>
+  <!--/div-->
+  </dd>
 </xsl:template>
 
 <xsl:template match="competence">
-  <div>
-    <h3><xsl:apply-templates select="field"/></h3>
-    <div class="data">
-      <p><xsl:apply-templates select="description"/></p>
-      <xsl:if test="tools"><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
-    </div>
-  </div>
+  <!--div-->
+  <dt><xsl:apply-templates select="field"/></dt>
+  <!--div class="data"-->
+  <dd>
+    <p><xsl:apply-templates select="description"/></p>
+    <xsl:if test="tools"><p><xsl:copy-of select="$tools"/> <xsl:apply-templates select="tools"/>.</p></xsl:if>
+  </dd>
+  <!--/div-->
+  <!--/div-->
 </xsl:template>
 
 <xsl:template match="language">
@@ -256,10 +252,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   </div>
 </xsl:template>
 
+<xsl:template match="section[@short]">
+  <section>
+    <xsl:attribute name="id"><xsl:value-of select="translate(@title,translate(@title,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',''),'')" /></xsl:attribute>
+    <div class="page-header">
+      <h1 ><xsl:apply-templates select="@title"/></h1>
+    </div>
+    <dl class="dl-horizontal">
+      <xsl:apply-templates/>
+    </dl>
+  </section>
+</xsl:template>
+
 <xsl:template match="section">
   <section><xsl:attribute name="id"><xsl:value-of select="translate(@title,translate(@title,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',''),'')" /></xsl:attribute>
   <div class="page-header">
-    <h1 ><a name="projets"></a><xsl:apply-templates select="@title"/></h1>
+    <h1 ><xsl:apply-templates select="@title"/></h1>
   </div>
   <xsl:apply-templates/>
   </section>
