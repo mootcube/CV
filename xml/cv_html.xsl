@@ -38,19 +38,6 @@
 	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
 	<link href="css/docs2.css" rel="stylesheet" />
 	
-	
-      </head>
-      <body  data-spy="scroll" data-target=".bs-docs-sidebar">
-	
-	<script src="js/jquery-1.8.2.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	
-	<script src="js/application.js"/>
-	
-	<!--script type="text/javascript">
-	  $('#navbar').affix()
-	</script-->
-	
 	<script type="text/javascript">
 	  
 	  var _gaq = _gaq || [];
@@ -64,6 +51,19 @@
 	  })();
 	  
 	</script>
+      </head>
+      <body  data-spy="scroll" data-target=".bs-docs-sidebar">
+	
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	
+	<script src="js/application.js"/>
+	
+	<!--script type="text/javascript">
+	  $('#navbar').affix()
+	</script-->
+	
+	
 	<!--  <xsl:apply-templates select=""/>  -->
 	
 	
