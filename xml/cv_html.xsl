@@ -35,7 +35,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<!--link href="css/bootstrap-responsive.css" rel="stylesheet" /-->
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
 	<link href="css/docs2.css" rel="stylesheet" />
 	
 	
@@ -51,19 +51,19 @@
 	  $('#navbar').affix()
 	</script-->
 	
-	<!--script type="text/javascript">
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-24574529-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-</script-->
+	<script type="text/javascript">
+	  
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-24574529-1']);
+	  _gaq.push(['_trackPageview']);
+	  
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
 	<!--  <xsl:apply-templates select=""/>  -->
 	
 	
@@ -77,12 +77,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
               </button>
-              <a class="brand" href="./cv.html">CV</a>
+              <a class="brand" ><xsl:attribute name="href">mailto:<xsl:value-of select="profile/mail/@mailto"/></xsl:attribute><xsl:value-of select="profile/mail"/></a>
+	      <a class="brand" href="CV-Mathieu-Chataigner.pdf"><img width="20px" height="20px" src="img/pdf.png"/></a>
               <div class="nav-collapse collapse">
 		<ul class="nav">
-		  <li class="active">
+		  <!--li class="active">
                     <a href="./cv.html">Curriculum Vitae</a>
-		  </li>
+		  </li-->
 		  <xsl:apply-templates select="socials"/>
 		</ul>
               </div>
@@ -93,20 +94,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<header class="jumbotron subhead" id="overview">
 	  <div class="container">
 	    <div class="row">
-	      <div class="span9">
+	      <div class="span12">
 		<h1><xsl:apply-templates select="profile/name"/><xsl:text> </xsl:text><xsl:apply-templates select="profile/surname"/></h1>
 		<p class="lead"><xsl:apply-templates select="profile/title"/></p>
 	      </div>
-	      <div class="span3 hidden-phone">
-		<ul id="info" class="unstyled">
-		  <li><address><xsl:apply-templates select="profile/address/street"/><br/><xsl:apply-templates select="profile/address/cp"/></address></li>
+	      <!--div class="span3 hidden-phone">
+		<ul id="info" class="unstyled"-->
+		  <!--li><address><xsl:apply-templates select="profile/address/street"/><br/><xsl:apply-templates select="profile/address/cp"/></address></li>
 		  <li><xsl:apply-templates select="profile/phone"/></li>
-		  <li><xsl:apply-templates select="profile/mail"/></li>
+		  <li><xsl:apply-templates select="profile/mail"/></li-->
 		  <!--li><a><xsl:attribute name="href">mailto:<xsl:apply-templates select="profile/mail"/></xsl:attribute><xsl:apply-templates select="profile/mail"/></a></li-->
-		  <li>Age : <xsl:apply-templates select="profile/age"/></li>
-		  <li><xsl:apply-templates select="profile/drive"/></li>
-		</ul>
-	      </div>
+		  <!--li>Age : <xsl:apply-templates select="profile/age"/></li>
+		  <li><xsl:apply-templates select="profile/drive"/></li-->
+		<!--/ul>
+	      </div-->
 	    </div>
 	  </div>
 	</header>
@@ -157,7 +158,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <xsl:template match="socials">
   <xsl:for-each select="social">
     <li class="visible-desktop">
-      <a><xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute><img width="25px" height="25px"><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute><xsl:attribute name="alt"><xsl:value-of select="@name"/></xsl:attribute></img></a>
+      <a><xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute><img width="20px" height="20px"><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute><xsl:attribute name="alt"><xsl:value-of select="@name"/></xsl:attribute></img></a>
+    </li>
+    <li class="hidden-desktop">
+      <a><xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute><img width="20px" height="20px"><xsl:attribute name="src"><xsl:value-of select="@img"/></xsl:attribute><xsl:attribute name="alt"><xsl:value-of select="@name"/></xsl:attribute></img>&#160;<xsl:value-of select="@name"/></a>
     </li>
   </xsl:for-each>
 </xsl:template>
@@ -233,10 +237,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </xsl:template>
 
 <xsl:template match="interest" >
-  <div>
-    <h3><xsl:apply-templates select="field"/></h3>
-    <div class="data"><p><xsl:apply-templates select="description"/></p></div>
-  </div>
+    <dt><xsl:apply-templates select="field"/></dt>
+    <dd><xsl:apply-templates select="description"/></dd>
 </xsl:template>
 
 <xsl:template match="p">
@@ -281,6 +283,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <xsl:template match="euro">€</xsl:template>
 <xsl:template match="amp">&amp;</xsl:template>
 <xsl:template match="nbsp">&#160;</xsl:template>
+<xsl:template match="percent">&#37;</xsl:template>
 
 <xsl:template match="link"><a style="white-space:nowrap;"><xsl:attribute name="href"><xsl:apply-templates select="@href"/></xsl:attribute><xsl:apply-templates/></a></xsl:template>
 

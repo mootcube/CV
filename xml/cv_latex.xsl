@@ -132,9 +132,13 @@
 
 </xsl:template>
 
+<xsl:template match="section[@nopdf]">
+</xsl:template>
+
 <xsl:template match="section">
 \section{<xsl:apply-templates select="@title"/>}%<xsl:apply-templates/>%
 </xsl:template>
+
 
 <xsl:template match="formation">\cventry{<xsl:apply-templates select="year"/>}{<xsl:apply-templates select="title"/>}{\href{<xsl:apply-templates select="web"/>}{<xsl:apply-templates select="school/text()"/><xsl:if test="school/schoollong"> (<xsl:apply-templates select="school/schoollong"/>)</xsl:if>}}{<xsl:apply-templates select="location"/>}{<xsl:apply-templates select="field"/>}{<xsl:if test="misc"><xsl:apply-templates select="misc"/>.</xsl:if>}  % arguments 3 to 6 can be left empty</xsl:template>
 
@@ -163,6 +167,8 @@
 <xsl:template match="amp">\&amp;</xsl:template>
 
 <xsl:template match="nbsp">~</xsl:template>
+
+<xsl:template match="percent">\&#37;</xsl:template>
 
 <xsl:template match="link">\href{<xsl:value-of select="@href"/>}{<xsl:apply-templates/>}</xsl:template>
 

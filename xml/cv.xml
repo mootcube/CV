@@ -5,7 +5,7 @@
   <title>CV</title>
   <description>Je m'appelle Mathieu CHATAIGNER. Cette page représente mon Curriculum Vitæ.</description>
   <keywords>Mathieu Mahtieu CHATAIGNER CHATAIGNIER</keywords>
-  <replyto>mathieu@chataigner.pro</replyto>
+  <replyto>mathieu.chataigner+cv@gmail.com</replyto>
   <author>Mathieu CHATAIGNER</author>
   <copyright>Mathieu CHATAIGNER</copyright>
   <creationDate><d>15</d><m>07</m><y>2011</y></creationDate>
@@ -20,8 +20,8 @@
     <siteLink>Mon site internet pour la dernière version</siteLink>
   </misc>
   <socials>
-    <social name="Google Plus" img="img/googleplus.png">http://gplus.to/mathieuchataigner</social>
-    <social name="Twitter" img="img/twitter.png">http://twitter.com/mchataigner</social>
+    <!--social name="Google Plus" img="img/googleplus.png">http://gplus.to/mathieuchataigner</social>
+    <social name="Twitter" img="img/twitter.png">http://twitter.com/mchataigner</social-->
     <social name="GitHub" img="img/github.png">http://github.com/mootcube</social>
     <social name="LinkedIn" img="img/linkedin.png">http://fr.linkedin.com/in/mathieuchataigner</social>
     <social name="Viadeo" img="img/viadeo.png">http://fr.viadeo.com/fr/profile/mathieu.chataigner1</social>
@@ -32,12 +32,19 @@
     <!--field>Architecture des Systèmes d'Information</field-->
     <address><street>26 rue violet, 4 gauche</street><cp>75015 Paris</cp></address>
     <phone>+33 6 84 85 83 22</phone>
-    <mail>mathieu.chataigner@gmail.com</mail>
+    <mail mailto="mathieu.chataigner+cv@gmail.com?subject=Contact%20CV%20online">mathieu.chataigner@gmail.com</mail>
     <age>24 ans</age>
     <drive>Permis B</drive>
   </profile>
 
   <section title="Formation" short="">
+    <formation>
+      <year>Août 2012</year>
+      <title>Oracle Certified Professional Java SE Programmer 6</title>
+      <school>Oracle</school>
+      <web>http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=458&amp;get_params=p_track_id:JSE6Prog</web>
+      <location>90<percent/></location>
+    </formation>
     <formation>
       <year>2010 - 2011</year>
       <school>Université de Cranfield</school>
@@ -73,8 +80,8 @@
     </competence>
     <competence>
       <field>Grande échelle</field>
-      <description>Architecture répartie, Cloud Computing, calculs haute performance.</description>
-      <tools><strong>JEE, Web Services</strong></tools>
+      <description>Architecture répartie, Cloud Computing, MapReduce.</description>
+      <tools><strong>JEE, Web Services</strong>, Hadoop</tools>
     </competence>
     <competence>
       <field>Réseau</field>
@@ -104,7 +111,7 @@
     </language>
   </section-->
 
-  <section title="Expériences" short="">
+  <section title="Expériences">
     <experience>
       <year>depuis nov.<nbsp/>2011</year>
       <title>Ingénieur études et développement</title>
@@ -133,7 +140,7 @@
       <tools><strong>Java, JEE, Tomcat, XML, XSL</strong>, JavaScript, Open Archive Initiative, ORI-OAI</tools>
       <description>Projet informatique industriel à mi-temps, certifié ISO 9001 : 2008 (Management de la Qualité). Amélioration et ajout de fonctionnalités au portail UNIT, moteur de recherche de ressources pédagogiques libres sur Internet : <link href="http://www.unit.eu/">www.unit.eu</link>.</description>
     </experience>
-    <experience>
+    <!--experience>
       <year>2010 (2<nbsp/>mois)</year>
       <title>Stage de développement Web</title>
       <entreprise>Auchan France</entreprise>
@@ -141,7 +148,7 @@
       <location>Villeneuve d'Ascq (59)</location>
       <tools><strong>XML, XSL, JavaScript</strong>, Microsoft SharePoint</tools>
       <description>Développement d'un site intranet. Il a pour but de référencer les solutions collaboratives disponibles à Auchan permettant d'accroître la productivité des équipes.</description>
-    </experience>
+    </experience-->
     <experience>
       <year>2010</year>
       <title>Étude en Junior Entreprise</title>
@@ -159,7 +166,7 @@
       <location>Rouen (76)</location>
       <description>Membre du Conseil d’Administration et Responsable Informatique.<newline/> Troisième année d'existence (Pépinière-Junior-Entreprise, type Junior-Entreprise) : 20k<euro/> de CA, 35 membres. Mon rôle a consisté en l'amélioration du site internet, la maintenance du serveur et au support informatique des membres.</description>
     </experience>
-    <experience>
+    <!--experience>
       <year>2009 (2<nbsp/>mois)</year>
       <title>Stage de développement</title>
       <entreprise>Communications <amp/> Systèmes</entreprise>
@@ -167,7 +174,7 @@
       <location>Toulouse (31)</location>
       <tools><strong>Java, XML, XSL</strong></tools>
       <description>Recherche d’une solution de type Open-Source permettant d’afficher des grands graphes de données et son implémentation.</description>
-    </experience>
+    </experience-->
   </section>
 
   <section title="Centres d'intérêts" short="">
@@ -185,7 +192,7 @@
     </interest>
   </section>
 
-  <section title="Projets effectués" short="">
+  <section title="Projets effectués" short="" nopdf="">
     <project>
       <title>HPC - MPI Laplace</title>
       <tools>MPI, C</tools>

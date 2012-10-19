@@ -14,12 +14,12 @@ all: clean clean_pdf qr cv
 	@echo "$@ generated"
 
 qr:
-	xsltproc xml/cv_latex_qr.xsl xml/cv.xml > qr.tex
+	xsltproc -o qr.tex xml/cv_latex_qr.xsl xml/cv.xml
 	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
 	pdflatex -shell-escape qr.tex > /dev/null 2> /dev/null
 
 cv:
-	xsltproc xml/cv_latex.xsl xml/cv.xml > cv.tex
+	xsltproc -o cv.tex xml/cv_latex.xsl xml/cv.xml
 	pdflatex cv.tex > /dev/null
 	pdflatex cv.tex 
 	@echo "cv.pdf generated"
@@ -34,7 +34,9 @@ clean_pdf:	clean
 
 clean:
 	rm -f *.log *.aux *.out *~ info.txt report.txt *.dvi cv.tex qr.tex CV.zip CV.tar.xz CV_latex.tar.xz CV_web.tar.xz CV_latex.tar CV_web.tar
-	rm -rf web
+	rm -rf web/*
+
+
 
 arch:	clean
 	rm -f CV.zip
@@ -57,7 +59,8 @@ dev:	folder
 	cp xml/cv_html_dev.xsl web/cv_html.xsl
 	cp xml/dev.js web/script.js
 
-prod:	folder
+prod:	folder clean
+	xsltproc -o xml/cv.html xml/cv_html.xsl xml/cv.xml
 	cp -r xml/cv_html.xsl xml/script.js xml/js xml/img xml/css xml/cv.html web
 
 web:	cv clean
